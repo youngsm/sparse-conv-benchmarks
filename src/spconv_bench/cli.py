@@ -53,7 +53,7 @@ def parse_args(argv=None) -> argparse.Namespace:
                    choices=list(DEFAULT_SPECS))
     p.add_argument("--batch-sizes", nargs="+", type=int, default=[1, 4, 8])
     p.add_argument("--in-channels", type=int, default=1)
-    p.add_argument("--n-warmup", type=int, default=10)
+    p.add_argument("--n-warmup", type=int, default=20)
     p.add_argument("--n-iters", type=int, default=30)
     p.add_argument("--device", default="cuda:0")
     p.add_argument("--rebuild-cache", action="store_true")

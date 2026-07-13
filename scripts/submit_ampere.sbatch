@@ -48,7 +48,7 @@ VOX="${VOX:-1}"
 for lib in spconv torchsparse warpconvnet; do
     echo "======================== $lib ========================"
     python -m spconv_bench.cli --library "$lib" --split "$SPLIT" --voxel-size "$VOX" \
-        --specs $SPECS --batch-sizes $BATCHES --n-warmup 10 --n-iters 30 \
+        --specs $SPECS --batch-sizes $BATCHES --n-warmup 20 --n-iters 30 \
         --out "results/${lib}.json" || echo "!!! $lib FAILED"
 done
 
@@ -59,7 +59,7 @@ if [[ -x "$ME_ENV/bin/python" ]]; then
     echo "======================== minkowski ========================"
     conda activate "$ME_ENV"
     OMP_NUM_THREADS=16 python -m spconv_bench.cli --library minkowski --split "$SPLIT" \
-        --voxel-size "$VOX" --specs $SPECS --batch-sizes $BATCHES --n-warmup 10 --n-iters 30 \
+        --voxel-size "$VOX" --specs $SPECS --batch-sizes $BATCHES --n-warmup 20 --n-iters 30 \
         --out results/minkowski.json || echo "!!! minkowski FAILED"
     conda activate "$BENCH_ENV"
 fi

@@ -16,9 +16,17 @@ import torch.nn as nn
 
 import warpconvnet  # noqa: F401  (initializes NVIDIA Warp on import)
 from warpconvnet.geometry.types.voxels import Voxels
+from warpconvnet.geometry.coords.ops.serialization import POINT_ORDERING
 from warpconvnet.nn.modules.sparse_conv import SparseConv3d
 from warpconvnet.nn.modules.normalizations import BatchNorm
 from warpconvnet.nn.modules.activations import ReLU
+
+# WarpConvNet's strided convolution emits output coordinates in POINT_ORDERING
+# .RANDOM by default, so the pooled-resolution geometry differs every forward --
+# which defeats its per-geometry kernel-map cache and gives spatially incoherent
+# neighbour search. A deterministic space-filling (Morton) order makes the
+# downsampled coordinates reproducible and locality-friendly.
+_ORDER = POINT_ORDERING.MORTON_XYZ
 
 from spconv_bench.bench import Adapter
 from spconv_bench.data import Batch
@@ -49,7 +57,7 @@ class Stage(nn.Module):
         super().__init__()
         self.downsample = None
         if downsample:
-            self.downsample = SparseConv3d(in_ch, ch, k, stride=2, bias=False)
+            self.downsample = SparseConv3d(in_ch, ch, k, stride=2, bias=False, order=_ORDER)
             self.down_bn = BatchNorm(ch)
             self.down_relu = ReLU()
         self.blocks = nn.ModuleList([ResBlock(ch, k) for _ in range(n_blocks)])
