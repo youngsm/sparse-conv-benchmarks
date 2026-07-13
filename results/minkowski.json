@@ -1,0 +1,604 @@
+{
+  "meta": {
+    "library": "minkowski",
+    "library_version": "MinkowskiEngine 0.5.4",
+    "torch_version": "1.10.2+cu113",
+    "cuda_version": "11.3",
+    "device_name": "NVIDIA A100-SXM4-40GB",
+    "device_capability": "8.0",
+    "hostname": "sdfampere029",
+    "timestamp_utc": "2026-07-13T10:05:47.272240+00:00",
+    "split": "val",
+    "voxel_size": 1.0,
+    "in_channels": 1,
+    "n_warmup": 10,
+    "n_iters": 30
+  },
+  "results": [
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 1467216,
+      "forward": {
+        "mean_ms": 4.1696256081263225,
+        "std_ms": 0.20215766842557853,
+        "median_ms": 4.312576055526733,
+        "min_ms": 3.9198720455169678,
+        "p90_ms": 4.329472064971924,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 8.577808984120686,
+        "std_ms": 0.23114585103599955,
+        "median_ms": 8.4618239402771,
+        "min_ms": 8.41420841217041,
+        "p90_ms": 8.862719535827637,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 17.219072,
+        "peak_reserved_mb": 33.554432
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 21.833216,
+        "peak_reserved_mb": 37.748736
+      },
+      "throughput_kvox_s": 546.7596688947222,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 1467216,
+      "forward": {
+        "mean_ms": 3.867613903681437,
+        "std_ms": 0.032373596551077195,
+        "median_ms": 3.8604800701141357,
+        "min_ms": 3.851263999938965,
+        "p90_ms": 3.8737919330596924,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 8.639624532063802,
+        "std_ms": 0.059354177070782804,
+        "median_ms": 8.621056079864502,
+        "min_ms": 8.58521556854248,
+        "p90_ms": 8.68454360961914,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 19.923968,
+        "peak_reserved_mb": 39.845888
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 27.776,
+        "peak_reserved_mb": 48.234496
+      },
+      "throughput_kvox_s": 844.8283803204166,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 1467216,
+      "forward": {
+        "mean_ms": 4.121258656183879,
+        "std_ms": 0.0747137945698703,
+        "median_ms": 4.09548807144165,
+        "min_ms": 4.075520038604736,
+        "p90_ms": 4.164608001708984,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 9.594572798411052,
+        "std_ms": 0.04568393217686823,
+        "median_ms": 9.583104133605957,
+        "min_ms": 9.549823760986328,
+        "p90_ms": 9.632767677307129,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 38.565376,
+        "peak_reserved_mb": 75.497472
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 65.995776,
+        "peak_reserved_mb": 75.497472
+      },
+      "throughput_kvox_s": 1978.6185793643594,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 1467216,
+      "forward": {
+        "mean_ms": 4.325751447677613,
+        "std_ms": 0.03152466957785631,
+        "median_ms": 4.322304010391235,
+        "min_ms": 4.299776077270508,
+        "p90_ms": 4.336639881134033,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 10.742067178090414,
+        "std_ms": 0.054801503754137525,
+        "median_ms": 10.729983806610107,
+        "min_ms": 10.677248001098633,
+        "p90_ms": 10.779647827148438,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 53.507072,
+        "peak_reserved_mb": 79.691776
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 98.17344,
+        "peak_reserved_mb": 119.537664
+      },
+      "throughput_kvox_s": 2829.250599175893,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 1467216,
+      "forward": {
+        "mean_ms": 4.84952745437622,
+        "std_ms": 0.23119081496656133,
+        "median_ms": 4.777472019195557,
+        "min_ms": 4.766719818115234,
+        "p90_ms": 4.963327884674072,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 12.761224587758383,
+        "std_ms": 0.17257797875167613,
+        "median_ms": 12.683775901794434,
+        "min_ms": 12.644351959228516,
+        "p90_ms": 12.942336082458496,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 81.928192,
+        "peak_reserved_mb": 102.760448
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 169.199616,
+        "peak_reserved_mb": 207.618048
+      },
+      "throughput_kvox_s": 4443.147255192993,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 10567200,
+      "forward": {
+        "mean_ms": 8.81169064839681,
+        "std_ms": 0.18446082928404564,
+        "median_ms": 8.782847881317139,
+        "min_ms": 8.714240074157715,
+        "p90_ms": 8.830975532531738,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 24.253712781270345,
+        "std_ms": 0.3589938333895197,
+        "median_ms": 24.02303981781006,
+        "min_ms": 23.91551971435547,
+        "p90_ms": 24.846336364746094,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 93.29152,
+        "peak_reserved_mb": 130.023424
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 108.79232,
+        "peak_reserved_mb": 153.092096
+      },
+      "throughput_kvox_s": 193.372455685292,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 10567200,
+      "forward": {
+        "mean_ms": 8.844970734914144,
+        "std_ms": 0.09956054734450817,
+        "median_ms": 8.833536148071289,
+        "min_ms": 8.720383644104004,
+        "p90_ms": 8.9999361038208,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 24.896068318684897,
+        "std_ms": 0.19490949781660455,
+        "median_ms": 24.897024154663086,
+        "min_ms": 24.672256469726562,
+        "p90_ms": 25.044992446899414,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 100.018176,
+        "peak_reserved_mb": 144.703488
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 124.653056,
+        "peak_reserved_mb": 159.383552
+      },
+      "throughput_kvox_s": 293.1788227188461,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 10567200,
+      "forward": {
+        "mean_ms": 9.326455465952556,
+        "std_ms": 0.0962134749554832,
+        "median_ms": 9.338880062103271,
+        "min_ms": 9.157631874084473,
+        "p90_ms": 9.378815650939941,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 28.575300216674805,
+        "std_ms": 0.24737683081842995,
+        "median_ms": 28.51583957672119,
+        "min_ms": 28.396543502807617,
+        "p90_ms": 28.74163246154785,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 129.409536,
+        "peak_reserved_mb": 205.520896
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 228.649984,
+        "peak_reserved_mb": 266.338304
+      },
+      "throughput_kvox_s": 664.3499755401377,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 10567200,
+      "forward": {
+        "mean_ms": 10.256486415863037,
+        "std_ms": 0.20030940756176616,
+        "median_ms": 10.223104000091553,
+        "min_ms": 10.0065279006958,
+        "p90_ms": 10.404864311218262,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 32.38894933064778,
+        "std_ms": 0.08732607010648517,
+        "median_ms": 32.37222480773926,
+        "min_ms": 32.2611198425293,
+        "p90_ms": 32.521217346191406,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 151.113728,
+        "peak_reserved_mb": 249.561088
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 314.856448,
+        "peak_reserved_mb": 415.236096
+      },
+      "throughput_kvox_s": 938.3447326351466,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 10567200,
+      "forward": {
+        "mean_ms": 12.056200536092122,
+        "std_ms": 0.06020369168335249,
+        "median_ms": 12.036096096038818,
+        "min_ms": 12.004351615905762,
+        "p90_ms": 12.166144371032715,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 45.91667175292969,
+        "std_ms": 0.21114708693794249,
+        "median_ms": 45.87929725646973,
+        "min_ms": 45.7789421081543,
+        "p90_ms": 45.96121597290039,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 198.775808,
+        "peak_reserved_mb": 270.532608
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 522.9312,
+        "peak_reserved_mb": 635.437056
+      },
+      "throughput_kvox_s": 1234.84559824139,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 61061952,
+      "forward": {
+        "mean_ms": 15.508616574605306,
+        "std_ms": 0.08200938554330502,
+        "median_ms": 15.539711952209473,
+        "min_ms": 15.394816398620605,
+        "p90_ms": 15.575039863586426,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 49.43841298421224,
+        "std_ms": 0.15773222232694936,
+        "median_ms": 49.41209602355957,
+        "min_ms": 49.141761779785156,
+        "p90_ms": 49.56467056274414,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 520.257024,
+        "peak_reserved_mb": 610.271232
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 562.019328,
+        "peak_reserved_mb": 608.17408
+      },
+      "throughput_kvox_s": 94.86550471386923,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 61061952,
+      "forward": {
+        "mean_ms": 15.381026140848796,
+        "std_ms": 0.1868408921785321,
+        "median_ms": 15.336448192596436,
+        "min_ms": 15.249407768249512,
+        "p90_ms": 15.48799991607666,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 52.33452377319336,
+        "std_ms": 0.47644112091008606,
+        "median_ms": 52.12057685852051,
+        "min_ms": 51.83795166015625,
+        "p90_ms": 53.03193664550781,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 527.254016,
+        "peak_reserved_mb": 652.214272
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 597.088256,
+        "peak_reserved_mb": 673.185792
+      },
+      "throughput_kvox_s": 139.4681650612186,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 61061952,
+      "forward": {
+        "mean_ms": 18.21020164489746,
+        "std_ms": 0.1271364073590739,
+        "median_ms": 18.1790714263916,
+        "min_ms": 18.108415603637695,
+        "p90_ms": 18.296831130981445,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 69.46778513590495,
+        "std_ms": 0.3233335789857152,
+        "median_ms": 69.3493766784668,
+        "min_ms": 69.11590576171875,
+        "p90_ms": 70.03852844238281,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 576.13568,
+        "peak_reserved_mb": 719.323136
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 823.453184,
+        "peak_reserved_mb": 956.301312
+      },
+      "throughput_kvox_s": 273.2777497203949,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 61061952,
+      "forward": {
+        "mean_ms": 21.347908210754394,
+        "std_ms": 0.19116450358543144,
+        "median_ms": 21.2807674407959,
+        "min_ms": 21.25004768371582,
+        "p90_ms": 21.45996856689453,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 82.96355845133463,
+        "std_ms": 0.13890414441081678,
+        "median_ms": 82.95987319946289,
+        "min_ms": 82.7166748046875,
+        "p90_ms": 83.08121490478516,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 620.363776,
+        "peak_reserved_mb": 698.351616
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 1037.433344,
+        "peak_reserved_mb": 1243.611136
+      },
+      "throughput_kvox_s": 366.3295134312201,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "minkowski",
+      "library_version": "MinkowskiEngine 0.5.4",
+      "torch_version": "1.10.2+cu113",
+      "cuda_version": "11.3",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 61061952,
+      "forward": {
+        "mean_ms": 28.244514147440594,
+        "std_ms": 0.12139574755753944,
+        "median_ms": 28.189695358276367,
+        "min_ms": 28.15283203125,
+        "p90_ms": 28.35558319091797,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 111.69867095947265,
+        "std_ms": 0.09404857515381167,
+        "median_ms": 111.68819427490234,
+        "min_ms": 111.52896118164062,
+        "p90_ms": 111.82796478271484,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 707.299328,
+        "peak_reserved_mb": 945.815552
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 1528.044544,
+        "peak_reserved_mb": 1916.796928
+      },
+      "throughput_kvox_s": 507.6157085214767,
+      "ok": true,
+      "error": ""
+    }
+  ]
+}

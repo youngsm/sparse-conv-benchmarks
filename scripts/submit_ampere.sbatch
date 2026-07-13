@@ -52,8 +52,19 @@ for lib in spconv torchsparse warpconvnet; do
         --out "results/${lib}.json" || echo "!!! $lib FAILED"
 done
 
+# MinkowskiEngine runs in its own torch-1.10 / CUDA-11.3 env (built by
+# scripts/setup_env.sh step 8). Skipped automatically if that env is absent.
+ME_ENV=/sdf/home/y/youngsam/sw/dune/.conda/envs/me-bench
+if [[ -x "$ME_ENV/bin/python" ]]; then
+    echo "======================== minkowski ========================"
+    conda activate "$ME_ENV"
+    OMP_NUM_THREADS=16 python -m spconv_bench.cli --library minkowski --split "$SPLIT" \
+        --voxel-size "$VOX" --specs $SPECS --batch-sizes $BATCHES --n-warmup 10 --n-iters 30 \
+        --out results/minkowski.json || echo "!!! minkowski FAILED"
+    conda activate "$BENCH_ENV"
+fi
+
 echo "======================== aggregate ========================"
-python -m spconv_bench.report results/spconv.json results/torchsparse.json \
-    results/warpconvnet.json --outdir results || true
+python -m spconv_bench.report results/*.json --outdir results || true
 
 echo "DONE"

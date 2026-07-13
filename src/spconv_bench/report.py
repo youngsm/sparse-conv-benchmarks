@@ -25,11 +25,12 @@ import numpy as np
 import pandas as pd
 
 SPEC_ORDER = ["small", "medium", "large"]
-LIB_ORDER = ["spconv", "torchsparse", "warpconvnet"]
+LIB_ORDER = ["spconv", "torchsparse", "warpconvnet", "minkowski"]
 COLORS = {
     "spconv": "#4C72B0",
     "torchsparse": "#DD8452",
     "warpconvnet": "#55A868",
+    "minkowski": "#C44E52",
 }
 BASELINE = "spconv"
 

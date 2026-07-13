@@ -28,6 +28,7 @@ ADAPTER_MODULES = {
     "spconv": "spconv_bench.networks.spconv_net",
     "torchsparse": "spconv_bench.networks.torchsparse_net",
     "warpconvnet": "spconv_bench.networks.warpconvnet_net",
+    "minkowski": "spconv_bench.networks.minkowski_net",
 }
 
 
