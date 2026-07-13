@@ -1,0 +1,620 @@
+{
+  "meta": {
+    "library": "torchsparse",
+    "library_version": "torchsparse 2.1.0",
+    "torch_version": "2.5.0+cu124",
+    "cuda_version": "12.4",
+    "device_name": "NVIDIA H200 NVL",
+    "device_capability": "9.0",
+    "hostname": "sdfhopper001",
+    "timestamp_utc": "2026-07-13T19:41:14.417832+00:00",
+    "split": "val",
+    "voxel_size": 1.0,
+    "in_channels": 1,
+    "precision": "bf16",
+    "n_warmup": 20,
+    "n_iters": 30
+  },
+  "results": [
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 1.2551658590634664,
+        "std_ms": 0.007882709546708716,
+        "median_ms": 1.2518720030784607,
+        "min_ms": 1.248255968093872,
+        "p90_ms": 1.2657279968261719,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 2.726966381072998,
+        "std_ms": 0.024229044451941097,
+        "median_ms": 2.7180479764938354,
+        "min_ms": 2.69484806060791,
+        "p90_ms": 2.76310396194458,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 37.161984,
+        "peak_reserved_mb": 69.206016
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 110.548992,
+        "peak_reserved_mb": 127.926272
+      },
+      "throughput_kvox_s": 1719.8598532610415,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 1.295954136053721,
+        "std_ms": 0.01295526588636773,
+        "median_ms": 1.2923040390014648,
+        "min_ms": 1.2885760068893433,
+        "p90_ms": 1.297376036643982,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 2.8677440166473387,
+        "std_ms": 0.012808827171315727,
+        "median_ms": 2.8645761013031006,
+        "min_ms": 2.848031997680664,
+        "p90_ms": 2.8866560459136963,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 49.473024,
+        "peak_reserved_mb": 85.983232
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 135.151616,
+        "peak_reserved_mb": 165.675008
+      },
+      "throughput_kvox_s": 2545.206251893157,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 1.878434125582377,
+        "std_ms": 0.030931455332013653,
+        "median_ms": 1.8740000128746033,
+        "min_ms": 1.8594880104064941,
+        "p90_ms": 1.8787519931793213,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 4.486542892456055,
+        "std_ms": 0.0140974587495028,
+        "median_ms": 4.487648010253906,
+        "min_ms": 4.4535040855407715,
+        "p90_ms": 4.502975940704346,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 137.406976,
+        "peak_reserved_mb": 161.480704
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 295.958016,
+        "peak_reserved_mb": 354.418688
+      },
+      "throughput_kvox_s": 4231.32029606155,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 2.2503434737523396,
+        "std_ms": 0.00494655559255362,
+        "median_ms": 2.249184012413025,
+        "min_ms": 2.242016077041626,
+        "p90_ms": 2.2587199211120605,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 5.734001096089681,
+        "std_ms": 0.019213631575776102,
+        "median_ms": 5.729696035385132,
+        "min_ms": 5.703680038452148,
+        "p90_ms": 5.752543926239014,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 200.496128,
+        "peak_reserved_mb": 253.755392
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 413.54752,
+        "peak_reserved_mb": 528.482304
+      },
+      "throughput_kvox_s": 5300.3129037986955,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 3.8877920150756835,
+        "std_ms": 0.0208948792914575,
+        "median_ms": 3.88809597492218,
+        "min_ms": 3.8604800701141357,
+        "p90_ms": 3.909759998321533,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 9.256170622507732,
+        "std_ms": 0.029236042571927977,
+        "median_ms": 9.265055656433105,
+        "min_ms": 9.208671569824219,
+        "p90_ms": 9.285632133483887,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 344.295936,
+        "peak_reserved_mb": 434.110464
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 710.749696,
+        "peak_reserved_mb": 811.597824
+      },
+      "throughput_kvox_s": 6125.643347814447,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 3.8833653291066486,
+        "std_ms": 0.006440532706709439,
+        "median_ms": 3.8831679821014404,
+        "min_ms": 3.872159957885742,
+        "p90_ms": 3.890655994415283,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 8.894313589731853,
+        "std_ms": 0.013793907768738846,
+        "median_ms": 8.89192008972168,
+        "min_ms": 8.863424301147461,
+        "p90_ms": 8.913824081420898,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 121.259008,
+        "peak_reserved_mb": 402.653184
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 398.85824,
+        "peak_reserved_mb": 650.11712
+      },
+      "throughput_kvox_s": 527.3031980134394,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 4.31374716758728,
+        "std_ms": 0.0076317745209423865,
+        "median_ms": 4.312256097793579,
+        "min_ms": 4.299520015716553,
+        "p90_ms": 4.32371187210083,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 10.237551879882812,
+        "std_ms": 0.01840427216334711,
+        "median_ms": 10.240607738494873,
+        "min_ms": 10.188063621520996,
+        "p90_ms": 10.259424209594727,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 139.486208,
+        "peak_reserved_mb": 216.006656
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 450.322432,
+        "peak_reserved_mb": 505.413632
+      },
+      "throughput_kvox_s": 712.9634199307766,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 9.401211643218994,
+        "std_ms": 0.14563739524115124,
+        "median_ms": 9.370399951934814,
+        "min_ms": 9.193856239318848,
+        "p90_ms": 9.542559623718262,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 21.58811836242676,
+        "std_ms": 0.14263550693866395,
+        "median_ms": 21.60792064666748,
+        "min_ms": 21.28313636779785,
+        "p90_ms": 21.773344039916992,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 269.868032,
+        "peak_reserved_mb": 354.418688
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 858.337792,
+        "peak_reserved_mb": 970.981376
+      },
+      "throughput_kvox_s": 879.3726104930423,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 12.122865104675293,
+        "std_ms": 0.051070348365664354,
+        "median_ms": 12.125711917877197,
+        "min_ms": 12.024831771850586,
+        "p90_ms": 12.182080268859863,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 28.975887934366863,
+        "std_ms": 0.09471577112409298,
+        "median_ms": 28.963056564331055,
+        "min_ms": 28.795103073120117,
+        "p90_ms": 29.112672805786133,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 362.993152,
+        "peak_reserved_mb": 534.77376
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 1149.542912,
+        "peak_reserved_mb": 1337.982976
+      },
+      "throughput_kvox_s": 1048.8720852607094,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 20.823162587483726,
+        "std_ms": 0.10990254774755188,
+        "median_ms": 20.80408000946045,
+        "min_ms": 20.605087280273438,
+        "p90_ms": 20.95270347595215,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 47.565228652954104,
+        "std_ms": 0.14437424787014755,
+        "median_ms": 47.5379695892334,
+        "min_ms": 47.36403274536133,
+        "p90_ms": 47.7690544128418,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 577.67168,
+        "peak_reserved_mb": 840.957952
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 1828.374528,
+        "peak_reserved_mb": 2139.09504
+      },
+      "throughput_kvox_s": 1192.0472497608516,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 12.01083943049113,
+        "std_ms": 0.013636570447847158,
+        "median_ms": 12.010591983795166,
+        "min_ms": 11.987744331359863,
+        "p90_ms": 12.030240058898926,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 33.3966428120931,
+        "std_ms": 0.05939998321621579,
+        "median_ms": 33.403648376464844,
+        "min_ms": 33.283294677734375,
+        "p90_ms": 33.470943450927734,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 554.98752,
+        "peak_reserved_mb": 1394.60608
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 1574.964224,
+        "peak_reserved_mb": 2300.575744
+      },
+      "throughput_kvox_s": 140.43327727246066,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 14.472509829203288,
+        "std_ms": 0.01973157035291438,
+        "median_ms": 14.472160339355469,
+        "min_ms": 14.423487663269043,
+        "p90_ms": 14.491168022155762,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 40.14588902791341,
+        "std_ms": 0.10904002427366391,
+        "median_ms": 40.1351203918457,
+        "min_ms": 39.95382308959961,
+        "p90_ms": 40.260799407958984,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 589.552128,
+        "peak_reserved_mb": 1377.828864
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 1696.615936,
+        "peak_reserved_mb": 2283.798528
+      },
+      "throughput_kvox_s": 181.8118909989765,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 42.951062520345054,
+        "std_ms": 0.23233304512645567,
+        "median_ms": 42.9704475402832,
+        "min_ms": 42.56025695800781,
+        "p90_ms": 43.20947265625,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 103.25935389200846,
+        "std_ms": 0.3026732605823161,
+        "median_ms": 103.19926452636719,
+        "min_ms": 102.67190551757812,
+        "p90_ms": 103.52735900878906,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 790.713344,
+        "peak_reserved_mb": 1080.03328
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 2593.831424,
+        "peak_reserved_mb": 2984.247296
+      },
+      "throughput_kvox_s": 183.84775116696935,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 61.69261080423991,
+        "std_ms": 0.07974995895391454,
+        "median_ms": 61.69662284851074,
+        "min_ms": 61.551326751708984,
+        "p90_ms": 61.800254821777344,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 145.80460154215496,
+        "std_ms": 0.08441855690884704,
+        "median_ms": 145.79169464111328,
+        "min_ms": 145.65557861328125,
+        "p90_ms": 145.88771057128906,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 949.321728,
+        "peak_reserved_mb": 1262.485504
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 3356.141056,
+        "peak_reserved_mb": 3726.639104
+      },
+      "throughput_kvox_s": 208.44335280607095,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "torchsparse",
+      "library_version": "torchsparse 2.1.0",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 102.39402567545572,
+        "std_ms": 0.2701287103687453,
+        "median_ms": 102.31521606445312,
+        "min_ms": 101.96902465820312,
+        "p90_ms": 102.77833557128906,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 237.03496195475262,
+        "std_ms": 0.2973110908997862,
+        "median_ms": 237.10916900634766,
+        "min_ms": 236.44032287597656,
+        "p90_ms": 237.3673553466797,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 1300.005376,
+        "peak_reserved_mb": 2063.597568
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 5060.578304,
+        "peak_reserved_mb": 5840.56832
+      },
+      "throughput_kvox_s": 239.20521906309926,
+      "ok": true,
+      "error": ""
+    }
+  ]
+}

@@ -87,3 +87,18 @@ else
     echo ">>> WARNING: ME container $SPINE_SIF not found; MinkowskiEngine will be skipped."
 fi
 echo ">>> DONE"
+
+# ---------------------------------------------------------------------------
+# 9. (Optional) H200 / Hopper (sm_90). The compiled libraries above target sm_80
+#    (A100). To also run on H200, rebuild torchsparse and WarpConvNet for sm_90:
+#      export TORCH_CUDA_ARCH_LIST="8.0 9.0"
+#      FORCE_CUDA=1 uv pip install --python "$PY" --no-build-isolation --no-cache \
+#        "git+https://github.com/mit-han-lab/torchsparse.git@${TS_COMMIT}"
+#    WarpConvNet's Hopper (CuTe/CUTLASS) kernels need CUDA 12.8 to compile (12.4's
+#    ptxas rejects them). Build with CUDA_HOME pointed at a 12.8 toolkit:
+#      conda create -y -p envs/cudatk128 -c nvidia/label/cuda-12.8.0 cuda-toolkit
+#      CUDA_HOME=envs/cudatk128 TORCH_CUDA_ARCH_LIST="8.0 9.0" \
+#        uv pip install --python "$PY" --no-build-isolation --no-cache --reinstall warpconvnet==1.7.11
+#    spconv's wheel and the container's MinkowskiEngine already ship sm_90.
+#    NOTE: WarpConvNet 1.7.11's auto-tuned Hopper kernels are numerically broken
+#    (NaN); run it on H200 with WARPCONVNET_{FWD,DGRAD,WGRAD}_ALGO_MODE=explicit_gemm.

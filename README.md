@@ -1,7 +1,7 @@
 # Sparse Convolution Library Benchmark (PILArNet-M)
 
 A detailed, apples-to-apples benchmark of 3D **sparse convolution** libraries on real liquid-argon TPC data.
-It measures both **speed** (forward and forward+backward latency) and **GPU memory** (peak allocated and reserved) for an identical network architecture and identical inputs across each library.
+It measures both **speed** (forward and forward+backward latency) and **GPU memory** (peak allocated and reserved) for an identical network architecture and identical inputs across each library, on both **A100** and **H200** GPUs.
 
 ## Libraries compared
 
@@ -153,9 +153,42 @@ The kernel map is then built once during warmup and reused, and latency drops to
 This is the single most important knob for WarpConvNet performance, and worth knowing for anyone deploying it.
 spconv, torchsparse and MinkowskiEngine thread one kernel-map cache through the whole network, so they do not need it.
 
+## Results on H200 (Hopper)
+
+The same benchmark on an **NVIDIA H200 NVL** (Hopper, SM 9.0, 143 GB, driver 575), bf16, on the `hopper` partition.
+Full tables are in [`results/h200/summary.md`](results/h200/summary.md); plots in [`results/h200/plots/`](results/h200/plots).
+
+Getting there needed a rebuild: the compiled libraries were built for sm_80, so torchsparse and WarpConvNet were recompiled for sm_90 (`TORCH_CUDA_ARCH_LIST="8.0 9.0"`); spconv's wheel and the container's MinkowskiEngine already ship sm_90.
+WarpConvNet's Hopper (CuTe/CUTLASS) kernels additionally need **CUDA 12.8** to compile - 12.4's ptxas rejects them (`State space incorrect for instruction`).
+
+### A100 -> H200 speedup (large model, bf16, fwd+bwd, ms)
+
+| library (bs=16) | A100 | H200 | speedup |
+| --- | ---: | ---: | ---: |
+| spconv | 132 | 87 | 1.5x |
+| torchsparse | 352 | 237 | 1.5x |
+| MinkowskiEngine | 105 | 72 | 1.5x |
+
+H200 is a consistent **~1.5x faster** than A100 across the three libraries that run cleanly, in line with its higher SM count and HBM3e bandwidth.
+
+### WarpConvNet is broken on Hopper (in 1.7.11)
+
+WarpConvNet's fast auto-tuned CuTe/CUTLASS Hopper kernels produce **NaN** for many shapes (medium/large models at small batch), in **both fp32 and bf16** - the auto-tuner scores candidates on speed, not correctness, and selects a numerically wrong kernel.
+The only correct configuration we found is to pin a non-CuTe algorithm (`WARPCONVNET_*_ALGO_MODE=explicit_gemm`), which runs but is 3-5x slower than WarpConvNet's A100 speed.
+The H200 WarpConvNet numbers therefore reflect that slow-but-correct fallback, **not** the hardware - a limitation of WarpConvNet 1.7.11 on Hopper, not of the H200.
+
 ### Reproduce
 
 ```bash
 bash scripts/setup_env.sh                 # build the environment (once)
-sbatch scripts/submit_ampere.sbatch       # run all libraries on one A100 + aggregate
+
+# A100 (ampere partition) -> results/
+sbatch scripts/submit_ampere.sbatch
+
+# H200 (hopper partition) -> results/h200/
+sbatch --partition=hopper --account=neutrino:ml-dev --gres=gpu:h200:1 \
+       --export=ALL,OUTDIR=results/h200 scripts/submit_ampere.sbatch
 ```
+
+The sbatch honours `OUTDIR`, `PRECISION` (`fp32|tf32|bf16|fp16`), `SPECS` and `BATCHES` env vars.
+For H200, torchsparse/WarpConvNet must first be rebuilt for sm_90 (see `scripts/setup_env.sh`), and WarpConvNet needs `WARPCONVNET_*_ALGO_MODE=explicit_gemm` for correct results.

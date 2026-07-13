@@ -1,0 +1,620 @@
+{
+  "meta": {
+    "library": "spconv",
+    "library_version": "spconv-cu124 2.3.8",
+    "torch_version": "2.5.0+cu124",
+    "cuda_version": "12.4",
+    "device_name": "NVIDIA H200 NVL",
+    "device_capability": "9.0",
+    "hostname": "sdfhopper001",
+    "timestamp_utc": "2026-07-13T19:40:47.633818+00:00",
+    "split": "val",
+    "voxel_size": 1.0,
+    "in_channels": 1,
+    "precision": "bf16",
+    "n_warmup": 20,
+    "n_iters": 30
+  },
+  "results": [
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 2.8781162818272907,
+        "std_ms": 0.01172407053664214,
+        "median_ms": 2.877936005592346,
+        "min_ms": 2.844480037689209,
+        "p90_ms": 2.893376111984253,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 4.492576011021932,
+        "std_ms": 0.01453172046989585,
+        "median_ms": 4.491999864578247,
+        "min_ms": 4.461472034454346,
+        "p90_ms": 4.508224010467529,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 25.669632,
+        "peak_reserved_mb": 39.845888
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 35.79648,
+        "peak_reserved_mb": 52.4288
+      },
+      "throughput_kvox_s": 1043.9444960961628,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 2.889565857251485,
+        "std_ms": 0.010069022101441729,
+        "median_ms": 2.8874080181121826,
+        "min_ms": 2.87391996383667,
+        "p90_ms": 2.8982720375061035,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 4.51628483136495,
+        "std_ms": 0.019894935698048136,
+        "median_ms": 4.512991905212402,
+        "min_ms": 4.4817280769348145,
+        "p90_ms": 4.543583869934082,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 35.125248,
+        "peak_reserved_mb": 62.91456
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 49.170944,
+        "peak_reserved_mb": 67.108864
+      },
+      "throughput_kvox_s": 1616.1513882626475,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 3.1857365369796753,
+        "std_ms": 0.015519913334647688,
+        "median_ms": 3.1858080625534058,
+        "min_ms": 3.155872106552124,
+        "p90_ms": 3.199359893798828,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 5.806188853581746,
+        "std_ms": 0.014628134682501143,
+        "median_ms": 5.80403208732605,
+        "min_ms": 5.782976150512695,
+        "p90_ms": 5.8209919929504395,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 78.214656,
+        "peak_reserved_mb": 96.468992
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 134.526464,
+        "peak_reserved_mb": 161.480704
+      },
+      "throughput_kvox_s": 3269.6146265185757,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 3.457905077934265,
+        "std_ms": 0.18809784372187402,
+        "median_ms": 3.421280026435852,
+        "min_ms": 3.3970561027526855,
+        "p90_ms": 3.440160036087036,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 6.853554153442383,
+        "std_ms": 0.016255568036418394,
+        "median_ms": 6.853856086730957,
+        "min_ms": 6.826655864715576,
+        "p90_ms": 6.875103950500488,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 112.474624,
+        "peak_reserved_mb": 163.577856
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 198.872576,
+        "peak_reserved_mb": 245.366784
+      },
+      "throughput_kvox_s": 4434.487467314283,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 3.8921066761016845,
+        "std_ms": 0.014747097792726219,
+        "median_ms": 3.890112042427063,
+        "min_ms": 3.8660800457000732,
+        "p90_ms": 3.9127678871154785,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 9.213894430796305,
+        "std_ms": 0.02516132511682095,
+        "median_ms": 9.213568210601807,
+        "min_ms": 9.146623611450195,
+        "p90_ms": 9.24835205078125,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 193.22624,
+        "peak_reserved_mb": 228.589568
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 350.53824,
+        "peak_reserved_mb": 429.91616
+      },
+      "throughput_kvox_s": 6153.749690303293,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 3.863102920850118,
+        "std_ms": 0.026611959822246865,
+        "median_ms": 3.8570719957351685,
+        "min_ms": 3.827392101287842,
+        "p90_ms": 3.879551887512207,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 6.794227266311646,
+        "std_ms": 0.029632450084471417,
+        "median_ms": 6.787200212478638,
+        "min_ms": 6.763552188873291,
+        "p90_ms": 6.813055992126465,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 107.776512,
+        "peak_reserved_mb": 146.80064
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 134.833152,
+        "peak_reserved_mb": 155.189248
+      },
+      "throughput_kvox_s": 690.2918928330228,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 3.9760565439860027,
+        "std_ms": 0.011850881459523434,
+        "median_ms": 3.9751360416412354,
+        "min_ms": 3.9545280933380127,
+        "p90_ms": 3.993567943572998,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 7.438086398442587,
+        "std_ms": 0.040070644023116,
+        "median_ms": 7.427296161651611,
+        "min_ms": 7.395359992980957,
+        "p90_ms": 7.456672191619873,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 117.96992,
+        "peak_reserved_mb": 186.646528
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 163.7888,
+        "peak_reserved_mb": 192.937984
+      },
+      "throughput_kvox_s": 981.3007820839902,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 5.2149226824442545,
+        "std_ms": 0.02430129404507294,
+        "median_ms": 5.209823846817017,
+        "min_ms": 5.177792072296143,
+        "p90_ms": 5.251008033752441,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 12.52999569574992,
+        "std_ms": 0.02657296597315267,
+        "median_ms": 12.52353572845459,
+        "min_ms": 12.485055923461914,
+        "p90_ms": 12.559871673583984,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 180.376064,
+        "peak_reserved_mb": 201.326592
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 369.988608,
+        "peak_reserved_mb": 392.167424
+      },
+      "throughput_kvox_s": 1515.0843193377339,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 6.07591142654419,
+        "std_ms": 0.01886555843620041,
+        "median_ms": 6.07585597038269,
+        "min_ms": 6.041567802429199,
+        "p90_ms": 6.099743843078613,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 16.40135040283203,
+        "std_ms": 0.07303421205239864,
+        "median_ms": 16.394448280334473,
+        "min_ms": 16.317567825317383,
+        "p90_ms": 16.436128616333008,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 226.329088,
+        "peak_reserved_mb": 266.338304
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 524.727296,
+        "peak_reserved_mb": 576.7168
+      },
+      "throughput_kvox_s": 1853.0181511610285,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 7.946841621398926,
+        "std_ms": 0.02030376474951098,
+        "median_ms": 7.947232007980347,
+        "min_ms": 7.899807929992676,
+        "p90_ms": 7.9673919677734375,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 26.080936431884766,
+        "std_ms": 0.0626263803584572,
+        "median_ms": 26.085423469543457,
+        "min_ms": 25.947839736938477,
+        "p90_ms": 26.15433692932129,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 333.390848,
+        "peak_reserved_mb": 413.138944
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 873.106944,
+        "peak_reserved_mb": 937.426944
+      },
+      "throughput_kvox_s": 2174.0016946125625,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 5.8738421440124515,
+        "std_ms": 0.015781517998600943,
+        "median_ms": 5.869103908538818,
+        "min_ms": 5.853407859802246,
+        "p90_ms": 5.893951892852783,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 13.108473682403565,
+        "std_ms": 0.014513489707048037,
+        "median_ms": 13.106288433074951,
+        "min_ms": 13.08460807800293,
+        "p90_ms": 13.131072044372559,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 545.786368,
+        "peak_reserved_mb": 576.7168
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 600.593408,
+        "peak_reserved_mb": 654.311424
+      },
+      "throughput_kvox_s": 357.7838361376672,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 6.790849049886067,
+        "std_ms": 0.015233515774841767,
+        "median_ms": 6.791183948516846,
+        "min_ms": 6.764480113983154,
+        "p90_ms": 6.806464195251465,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 16.203748385111492,
+        "std_ms": 0.026053580104134565,
+        "median_ms": 16.20945644378662,
+        "min_ms": 16.15203285217285,
+        "p90_ms": 16.236543655395508,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 560.247296,
+        "peak_reserved_mb": 583.008256
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 652.530176,
+        "peak_reserved_mb": 780.140544
+      },
+      "throughput_kvox_s": 450.4513293175145,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 12.179956309000652,
+        "std_ms": 0.03796492957490577,
+        "median_ms": 12.19217586517334,
+        "min_ms": 12.073311805725098,
+        "p90_ms": 12.21571159362793,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 36.56643155415853,
+        "std_ms": 0.13954637745839882,
+        "median_ms": 36.53607940673828,
+        "min_ms": 36.35667037963867,
+        "p90_ms": 36.76128005981445,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 657.025536,
+        "peak_reserved_mb": 715.128832
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 1148.505088,
+        "peak_reserved_mb": 1304.428544
+      },
+      "throughput_kvox_s": 519.1646872045145,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 15.977098751068116,
+        "std_ms": 0.053412692888477616,
+        "median_ms": 15.97377634048462,
+        "min_ms": 15.876319885253906,
+        "p90_ms": 16.027263641357422,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 51.53341865539551,
+        "std_ms": 0.08442850224970982,
+        "median_ms": 51.530975341796875,
+        "min_ms": 51.37295913696289,
+        "p90_ms": 51.61827087402344,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 721.094656,
+        "peak_reserved_mb": 796.91776
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 1524.599808,
+        "peak_reserved_mb": 1610.612736
+      },
+      "throughput_kvox_s": 589.7532279632293,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 23.84991874694824,
+        "std_ms": 0.07458005870798641,
+        "median_ms": 23.831088066101074,
+        "min_ms": 23.753887176513672,
+        "p90_ms": 23.935007095336914,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 87.30775477091471,
+        "std_ms": 0.15458367378784965,
+        "median_ms": 87.31550598144531,
+        "min_ms": 87.01996612548828,
+        "p90_ms": 87.48057556152344,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 882.445312,
+        "peak_reserved_mb": 1071.644672
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 2382.564352,
+        "peak_reserved_mb": 2506.09664
+      },
+      "throughput_kvox_s": 649.4268481508217,
+      "ok": true,
+      "error": ""
+    }
+  ]
+}

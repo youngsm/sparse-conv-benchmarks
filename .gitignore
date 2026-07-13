@@ -23,10 +23,11 @@ logs/
 # Scratch
 scratch/
 gpu_probe.txt
-.warpconvnet_cache/
+.warpconvnet_cache*/
 
 # Local agent tooling / skills
 .claude/
 
 # OS
 .DS_Store
+.wcn_cache*/

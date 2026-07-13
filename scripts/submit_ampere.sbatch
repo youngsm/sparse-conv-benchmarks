@@ -45,13 +45,15 @@ BATCHES="${BATCHES:-1 2 4 8 16}"
 SPLIT="${SPLIT:-val}"
 VOX="${VOX:-1}"
 PRECISION="${PRECISION:-bf16}"   # fp32 | tf32 | bf16 | fp16
+OUTDIR="${OUTDIR:-results}"      # e.g. results (A100) or results/h200
+mkdir -p "$OUTDIR"
 
 for lib in spconv torchsparse warpconvnet; do
     echo "======================== $lib ($PRECISION) ========================"
     python -m spconv_bench.cli --library "$lib" --precision "$PRECISION" \
         --split "$SPLIT" --voxel-size "$VOX" \
         --specs $SPECS --batch-sizes $BATCHES --n-warmup 20 --n-iters 30 \
-        --out "results/${lib}.json" || echo "!!! $lib FAILED"
+        --out "$OUTDIR/${lib}.json" || echo "!!! $lib FAILED"
 done
 
 # MinkowskiEngine 0.5.4 has no CUDA-12/torch-2.x wheel or clean local build, so
@@ -64,10 +66,10 @@ if [[ -f "$SPINE_SIF" ]]; then
         "cd /work && export OMP_NUM_THREADS=16 && PYTHONPATH=/work/src python3 -m spconv_bench.cli \
          --library minkowski --precision $PRECISION --split $SPLIT --voxel-size $VOX \
          --specs $SPECS --batch-sizes $BATCHES --n-warmup 20 --n-iters 30 \
-         --out /work/results/minkowski.json" || echo "!!! minkowski FAILED"
+         --out /work/$OUTDIR/minkowski.json" || echo "!!! minkowski FAILED"
 fi
 
 echo "======================== aggregate ========================"
-python -m spconv_bench.report results/*.json --outdir results || true
+python -m spconv_bench.report "$OUTDIR"/*.json --outdir "$OUTDIR" || true
 
 echo "DONE"

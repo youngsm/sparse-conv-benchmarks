@@ -1,0 +1,620 @@
+{
+  "meta": {
+    "library": "warpconvnet",
+    "library_version": "warpconvnet 1.7.11",
+    "torch_version": "2.5.0+cu124",
+    "cuda_version": "12.4",
+    "device_name": "NVIDIA H200 NVL",
+    "device_capability": "9.0",
+    "hostname": "sdfhopper001",
+    "timestamp_utc": "2026-07-13T20:09:45.601415+00:00",
+    "split": "val",
+    "voxel_size": 1.0,
+    "in_channels": 1,
+    "precision": "bf16",
+    "n_warmup": 20,
+    "n_iters": 30
+  },
+  "results": [
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 48.363545735677086,
+        "std_ms": 0.38463743942974793,
+        "median_ms": 48.279184341430664,
+        "min_ms": 48.09795379638672,
+        "p90_ms": 48.564414978027344,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 83.09604949951172,
+        "std_ms": 0.17078165167711926,
+        "median_ms": 83.05467224121094,
+        "min_ms": 82.78892517089844,
+        "p90_ms": 83.2511978149414,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 83.43296,
+        "peak_reserved_mb": 100.663296
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 86.984704,
+        "peak_reserved_mb": 104.8576
+      },
+      "throughput_kvox_s": 56.44070961553424,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 53.8502389272054,
+        "std_ms": 0.1887508666418444,
+        "median_ms": 53.82246398925781,
+        "min_ms": 53.60124969482422,
+        "p90_ms": 53.9554557800293,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 90.4281234741211,
+        "std_ms": 0.44174986611806827,
+        "median_ms": 90.46079635620117,
+        "min_ms": 89.48009490966797,
+        "p90_ms": 90.93965148925781,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 85.267456,
+        "peak_reserved_mb": 100.663296
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 90.854912,
+        "peak_reserved_mb": 111.149056
+      },
+      "throughput_kvox_s": 80.7160396520762,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 53.518193054199216,
+        "std_ms": 0.09661914949415724,
+        "median_ms": 53.51323318481445,
+        "min_ms": 53.3482551574707,
+        "p90_ms": 53.5731201171875,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 90.46148249308268,
+        "std_ms": 0.3146181943744445,
+        "median_ms": 90.44947052001953,
+        "min_ms": 89.68614196777344,
+        "p90_ms": 90.83888244628906,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 97.289728,
+        "peak_reserved_mb": 104.8576
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 115.736064,
+        "peak_reserved_mb": 119.537664
+      },
+      "throughput_kvox_s": 209.85727269561,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 53.486518732706706,
+        "std_ms": 0.1948171511329655,
+        "median_ms": 53.475969314575195,
+        "min_ms": 53.26559829711914,
+        "p90_ms": 53.55152130126953,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 90.05564371744792,
+        "std_ms": 0.2559558990301179,
+        "median_ms": 90.07699203491211,
+        "min_ms": 89.4862060546875,
+        "p90_ms": 90.37257385253906,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 106.21184,
+        "peak_reserved_mb": 146.80064
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 136.383488,
+        "peak_reserved_mb": 155.189248
+      },
+      "throughput_kvox_s": 337.4802371670979,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 1467216,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 53.09709358215332,
+        "std_ms": 0.1178833416753661,
+        "median_ms": 53.08839988708496,
+        "min_ms": 52.927391052246094,
+        "p90_ms": 53.28160095214844,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 89.80704243977864,
+        "std_ms": 0.26646989222707324,
+        "median_ms": 89.84657669067383,
+        "min_ms": 89.20848083496094,
+        "p90_ms": 90.0565414428711,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 127.232512,
+        "peak_reserved_mb": 169.869312
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 182.12352,
+        "peak_reserved_mb": 192.937984
+      },
+      "throughput_kvox_s": 631.3536050140051,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 57.545685068766275,
+        "std_ms": 0.10143088314168149,
+        "median_ms": 57.55204772949219,
+        "min_ms": 57.37740707397461,
+        "p90_ms": 57.647422790527344,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 116.83765258789063,
+        "std_ms": 0.32248597656187705,
+        "median_ms": 116.964111328125,
+        "min_ms": 116.16604614257812,
+        "p90_ms": 117.1993637084961,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 160.260608,
+        "peak_reserved_mb": 186.646528
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 168.627712,
+        "peak_reserved_mb": 203.423744
+      },
+      "throughput_kvox_s": 40.14116935867029,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 65.57634353637695,
+        "std_ms": 0.17059621872895334,
+        "median_ms": 65.56473541259766,
+        "min_ms": 65.24575805664062,
+        "p90_ms": 65.77555084228516,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 125.96997833251953,
+        "std_ms": 0.4315182482886047,
+        "median_ms": 125.95539093017578,
+        "min_ms": 125.28761291503906,
+        "p90_ms": 126.57667541503906,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 162.732032,
+        "peak_reserved_mb": 190.840832
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 177.35168,
+        "peak_reserved_mb": 216.006656
+      },
+      "throughput_kvox_s": 57.942377196676404,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 65.28723017374675,
+        "std_ms": 0.3461195964527709,
+        "median_ms": 65.20956802368164,
+        "min_ms": 64.97026824951172,
+        "p90_ms": 65.4236831665039,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 125.52749354044596,
+        "std_ms": 0.5131089950356525,
+        "median_ms": 125.42057800292969,
+        "min_ms": 124.76815795898438,
+        "p90_ms": 126.19039916992188,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 180.255744,
+        "peak_reserved_mb": 230.68672
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 236.163072,
+        "peak_reserved_mb": 255.852544
+      },
+      "throughput_kvox_s": 151.23380117426788,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 64.93379770914713,
+        "std_ms": 0.11892622321742942,
+        "median_ms": 64.94976043701172,
+        "min_ms": 64.72691345214844,
+        "p90_ms": 65.10582733154297,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 125.5308235168457,
+        "std_ms": 0.3382001670321364,
+        "median_ms": 125.57177734375,
+        "min_ms": 124.94786834716797,
+        "p90_ms": 125.97491455078125,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 194.939392,
+        "peak_reserved_mb": 253.755392
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 285.569024,
+        "peak_reserved_mb": 320.864256
+      },
+      "throughput_kvox_s": 242.1078676021075,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 65.77510096232096,
+        "std_ms": 0.07488481148467449,
+        "median_ms": 65.77334594726562,
+        "min_ms": 65.61593627929688,
+        "p90_ms": 65.85823822021484,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 128.2422637939453,
+        "std_ms": 0.14711616115916604,
+        "median_ms": 128.2548599243164,
+        "min_ms": 127.87564849853516,
+        "p90_ms": 128.41448974609375,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 224.107008,
+        "peak_reserved_mb": 276.824064
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 396.609024,
+        "peak_reserved_mb": 425.721856
+      },
+      "throughput_kvox_s": 442.1319331285617,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 65.95590387980143,
+        "std_ms": 0.1206043433138705,
+        "median_ms": 65.9544792175293,
+        "min_ms": 65.64051055908203,
+        "p90_ms": 66.0914535522461,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 146.79195200602214,
+        "std_ms": 0.27821083276043684,
+        "median_ms": 146.86074829101562,
+        "min_ms": 146.32003784179688,
+        "p90_ms": 147.19561767578125,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 593.307648,
+        "peak_reserved_mb": 622.854144
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 601.048576,
+        "peak_reserved_mb": 660.60288
+      },
+      "throughput_kvox_s": 31.949980471733173,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 76.87262420654297,
+        "std_ms": 0.09724064706764507,
+        "median_ms": 76.87141036987305,
+        "min_ms": 76.64320373535156,
+        "p90_ms": 76.97014617919922,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 160.26152598063152,
+        "std_ms": 0.429361876692156,
+        "median_ms": 160.33513641357422,
+        "min_ms": 159.33795166015625,
+        "p90_ms": 160.7972412109375,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 598.03648,
+        "peak_reserved_mb": 633.339904
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 624.191488,
+        "peak_reserved_mb": 694.157312
+      },
+      "throughput_kvox_s": 45.54430612923357,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 77.62323201497396,
+        "std_ms": 0.06252416671657002,
+        "median_ms": 77.61865615844727,
+        "min_ms": 77.49549102783203,
+        "p90_ms": 77.69942474365234,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 163.43187510172527,
+        "std_ms": 0.36110671580939935,
+        "median_ms": 163.40148162841797,
+        "min_ms": 163.01962280273438,
+        "p90_ms": 163.60643005371094,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 622.260736,
+        "peak_reserved_mb": 664.797184
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 741.765632,
+        "peak_reserved_mb": 805.306368
+      },
+      "throughput_kvox_s": 116.15849104211615,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 78.32568079630533,
+        "std_ms": 0.0685093162689056,
+        "median_ms": 78.31531143188477,
+        "min_ms": 78.20569610595703,
+        "p90_ms": 78.4012451171875,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 170.3647939046224,
+        "std_ms": 0.18105288110517986,
+        "median_ms": 170.32097625732422,
+        "min_ms": 170.18234252929688,
+        "p90_ms": 170.46041870117188,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 645.200896,
+        "peak_reserved_mb": 731.906048
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 842.184704,
+        "peak_reserved_mb": 1033.895936
+      },
+      "throughput_kvox_s": 178.3936651666116,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.11",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 61061952,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 81.0202402750651,
+        "std_ms": 0.08785827533519107,
+        "median_ms": 81.01286315917969,
+        "min_ms": 80.83360290527344,
+        "p90_ms": 81.11331176757812,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 186.05496978759766,
+        "std_ms": 0.731463986991009,
+        "median_ms": 185.90528106689453,
+        "min_ms": 185.8228759765625,
+        "p90_ms": 186.04617309570312,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 686.142976,
+        "peak_reserved_mb": 754.97472
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 1116.493824,
+        "peak_reserved_mb": 1377.828864
+      },
+      "throughput_kvox_s": 304.7486453316959,
+      "ok": true,
+      "error": ""
+    }
+  ]
+}
