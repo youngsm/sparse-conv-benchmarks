@@ -27,6 +27,7 @@ Fairness notes
 
 from __future__ import annotations
 
+import contextlib
 import statistics
 from dataclasses import asdict, dataclass, field
 from typing import Any, Callable, Dict, List, Optional
@@ -36,6 +37,38 @@ import torch
 
 from spconv_bench.data import Batch
 from spconv_bench.networks.spec import NetworkSpec
+
+#: precision -> autocast dtype (None means run in fp32).  All non-fp32 modes also
+#: enable TF32 for any torch-native fp32 matmuls (harmless; the sparse-conv
+#: kernels use their own GEMM paths).  "amp"/"bf16"/"fp16" use torch.autocast.
+_AMP_DTYPE = {
+    "fp32": None,
+    "tf32": None,
+    "bf16": torch.bfloat16,
+    "fp16": torch.float16,
+}
+
+
+def configure_precision(precision: str) -> Optional[torch.dtype]:
+    """Set global matmul precision and return the autocast dtype (or None)."""
+    if precision not in _AMP_DTYPE:
+        raise ValueError(f"unknown precision {precision!r}; choose from {list(_AMP_DTYPE)}")
+    high = precision != "fp32"
+    # set_float32_matmul_precision was added in torch 1.12; MinkowskiEngine runs
+    # on torch 1.10, so guard it. The TF32 backend flags exist further back.
+    if hasattr(torch, "set_float32_matmul_precision"):
+        torch.set_float32_matmul_precision("high" if high else "highest")
+    torch.backends.cuda.matmul.allow_tf32 = high
+    torch.backends.cudnn.allow_tf32 = high
+    # spconv's cumm GEMM has its OWN TF32 switch and ignores torch's flag, so it
+    # stays fp32 unless this is set (the reason fp32 spconv is ~8x slower).
+    try:
+        from spconv import constants as _spc
+
+        _spc.SPCONV_ALLOW_TF32 = high
+    except Exception:
+        pass
+    return _AMP_DTYPE[precision]
 
 
 # --------------------------------------------------------------------------- #
@@ -83,6 +116,7 @@ class BenchResult:
     batch_size: int
     n_voxels: int
     n_params: int
+    precision: str = "fp32"
     forward: Optional[Timing] = None
     forward_backward: Optional[Timing] = None
     mem_forward: Optional[Memory] = None
@@ -164,12 +198,14 @@ def benchmark(
     batch: Batch,
     device: torch.device,
     in_channels: Optional[int] = None,
-    n_warmup: int = 10,
+    n_warmup: int = 20,
     n_iters: int = 30,
+    precision: str = "bf16",
 ) -> BenchResult:
-    """Benchmark one (library, spec, batch) triple."""
+    """Benchmark one (library, spec, batch) triple at the given precision."""
     in_channels = in_channels or spec.in_channels
     cuda_ver = torch.version.cuda or "cpu"
+    amp_dtype = configure_precision(precision)
     res = BenchResult(
         library=adapter.name,
         library_version=adapter.library_version(),
@@ -181,7 +217,15 @@ def benchmark(
         batch_size=batch.batch_size,
         n_voxels=batch.n_voxels,
         n_params=0,
+        precision=precision,
     )
+
+    def _autocast():
+        return (
+            torch.autocast("cuda", dtype=amp_dtype)
+            if amp_dtype is not None
+            else contextlib.nullcontext()
+        )
 
     try:
         model = adapter.make_model(spec, device)
@@ -190,11 +234,13 @@ def benchmark(
         inp = adapter.make_input(batch, in_channels, device)
 
         def fwd() -> torch.Tensor:
-            return adapter.forward(model, inp)
+            with _autocast():
+                return adapter.forward(model, inp)
 
         def fwd_bwd() -> torch.Tensor:
             model.zero_grad(set_to_none=True)
-            out = adapter.forward(model, inp)
+            with _autocast():
+                out = adapter.forward(model, inp)
             loss = out.float().sum()
             loss.backward()
             return loss

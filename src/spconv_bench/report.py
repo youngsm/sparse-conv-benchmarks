@@ -51,6 +51,7 @@ def load(paths: List[str]) -> pd.DataFrame:
                 batch_size=r["batch_size"],
                 n_voxels=r["n_voxels"],
                 n_params=r["n_params"],
+                precision=r.get("precision", "fp32"),
                 ok=r["ok"],
                 error=r.get("error", ""),
             )
@@ -120,6 +121,8 @@ def markdown_summary(df: pd.DataFrame) -> str:
         meta = ok.iloc[0]
         lines.append(f"- **Device:** {meta['device']}")
         lines.append(f"- **torch / CUDA:** {meta['torch']} / cu{meta['cuda']}")
+        precs = sorted(ok["precision"].unique())
+        lines.append(f"- **Precision:** {', '.join(precs)} (autocast; TF32 enabled for fp32 matmuls)")
         vers = ok.groupby("library", observed=True)["lib_version"].first()
         for lib in [l for l in LIB_ORDER if l in vers.index]:
             lines.append(f"- **{lib}:** {vers[lib]}")

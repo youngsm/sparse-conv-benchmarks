@@ -53,6 +53,9 @@ def parse_args(argv=None) -> argparse.Namespace:
                    choices=list(DEFAULT_SPECS))
     p.add_argument("--batch-sizes", nargs="+", type=int, default=[1, 4, 8])
     p.add_argument("--in-channels", type=int, default=1)
+    p.add_argument("--precision", default="bf16",
+                   choices=["fp32", "tf32", "bf16", "fp16"],
+                   help="fp32 | tf32 (fp32+TF32) | bf16 | fp16 autocast")
     p.add_argument("--n-warmup", type=int, default=20)
     p.add_argument("--n-iters", type=int, default=30)
     p.add_argument("--device", default="cuda:0")
@@ -86,6 +89,7 @@ def main(argv=None) -> int:
         "split": args.split,
         "voxel_size": args.voxel_size,
         "in_channels": args.in_channels,
+        "precision": args.precision,
         "n_warmup": args.n_warmup,
         "n_iters": args.n_iters,
     }
@@ -99,6 +103,7 @@ def main(argv=None) -> int:
                 adapter, spec, batch, device,
                 in_channels=args.in_channels,
                 n_warmup=args.n_warmup, n_iters=args.n_iters,
+                precision=args.precision,
             )
             results.append(res.to_dict())
             if res.ok:

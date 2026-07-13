@@ -10,10 +10,9 @@ It measures both **speed** (forward and forward+backward latency) and **GPU memo
 | [spconv](https://github.com/traveller59/spconv) | `spconv-cu124` 2.3.8 | 2.5.0 / 12.4 | prebuilt wheel | implicit GEMM / native |
 | [torchsparse++](https://github.com/mit-han-lab/torchsparse) | master (`385f5ce`) | 2.5.0 / 12.4 | compiled from source | adaptive gather-scatter / implicit GEMM |
 | [WarpConvNet](https://github.com/NVlabs/WarpConvNet) | 1.7.11 | 2.5.0 / 12.4 | compiled from source (CUTLASS) | NVIDIA Warp + CUTLASS implicit GEMM |
-| [MinkowskiEngine](https://github.com/NVIDIA/MinkowskiEngine) | 0.5.4 | 1.10.2 / 11.3 | compiled from source (openblas) | gather-scatter / coordinate hashing |
+| [MinkowskiEngine](https://github.com/NVIDIA/MinkowskiEngine) | 0.5.4 | 2.5.1 / 12.1 | prebuilt in DeepLearnPhysics container | gather-scatter / coordinate hashing |
 
-MinkowskiEngine's last release (0.5.4, 2021) predates CUDA 12 / torch 2.x and has no working wheel or modern source build, so it is compiled and benchmarked on its **native stack** (torch 1.10.2 + CUDA 11.3, which still runs on this driver) in a separate environment.
-Because its sparse-conv kernels are its own CUDA (not torch's), the measurement still reflects the library; the torch/CUDA difference from the other three is a caveat, called out again with the results.
+MinkowskiEngine's last release (0.5.4, 2021) has no CUDA-12 / torch-2.x wheel and no clean modern source build, so rather than compile it we run it from the **DeepLearnPhysics `larcv` container** (`/sdf/group/neutrino/images/develop.sif`), which ships ME 0.5.4 built against **torch 2.5.1 + CUDA 12.1** - the same modern stack as the other three libraries. This keeps the comparison apples-to-apples (all four on torch 2.5.x / CUDA 12.x).
 WarpConvNet, from the same author (Chris Choy) and now maintained at NVIDIA, is its modern successor.
 
 ## What is measured
@@ -32,7 +31,7 @@ Timing uses CUDA events with warmup iterations and `torch.cuda.synchronize`; eac
 - **Identical architecture.** Every library builds the same ResNet-style 3D sparse encoder from one library-agnostic [`NetworkSpec`](src/spconv_bench/networks/spec.py): a submanifold stem, then stages of `[strided sparse conv downsample] + N submanifold residual blocks`, with channels doubling per stage. Three sizes (`small`/`medium`/`large`) probe how each library scales with width and depth.
 - **Identical inputs.** All libraries consume byte-identical voxelized events, cached to disk once (see below).
 - **Rulebook cost included.** The library sparse tensor is rebuilt from pre-uploaded GPU coordinates *inside every timed iteration*, so the cost of building the convolution rulebook / kernel map is counted (this is what a training loop over varying data actually pays), while host-to-device transfer is not re-timed.
-- **Shared environment where possible.** spconv, torchsparse++ and WarpConvNet run in one environment with the same torch (2.5.0), CUDA (12.4) and numpy, so their differences reflect the libraries, not their dependencies. MinkowskiEngine cannot build on that stack (its last release predates it), so it runs in a separate torch-1.10 / CUDA-11.3 environment; its numbers carry that caveat.
+- **Matched software stack.** spconv, torchsparse++ and WarpConvNet run in one environment on torch 2.5.0 / CUDA 12.4; MinkowskiEngine runs in the DeepLearnPhysics container on torch 2.5.1 / CUDA 12.1. All four are therefore on torch 2.5.x / CUDA 12.x, so measured differences reflect the libraries, not their dependencies.
 
 ## Dataset
 
@@ -44,7 +43,7 @@ The input feature is the energy deposition (`in_channels=1` by default); active 
 ## Environment
 
 spconv, torchsparse++ and WarpConvNet have conflicting build requirements but all work against one modern CUDA 12.4 / torch 2.5 stack once compiled, so the benchmark uses a **single environment** for those three.
-MinkowskiEngine 0.5.4 predates that stack and is built separately on torch 1.10.2 + CUDA 11.3 (see step 8 of `scripts/setup_env.sh`).
+MinkowskiEngine 0.5.4 predates that stack, so it runs from the DeepLearnPhysics `larcv` container (torch 2.5.1 + CUDA 12.1; see step 8 of `scripts/setup_env.sh` and the `apptainer exec` call in `scripts/submit_ampere.sbatch`).
 It is built as a clone of the existing `pimm` conda env (which already provides torch 2.5.0+cu124, a coherent CUDA 12.4 toolchain with `nvcc`, and `spconv-cu124`), plus the CUDA dev headers needed to compile extensions.
 `uv` is used as the package installer and to compile torchsparse++ and WarpConvNet; cloning leaves the original `pimm` env untouched.
 See [`scripts/setup_env.sh`](scripts/setup_env.sh) for the exact, reproducible steps.
@@ -90,48 +89,56 @@ python -m spconv_bench.report results/*.json --outdir results
 
 ## Results
 
-Measured on one **NVIDIA A100-SXM4-40GB** (SM 8.0).
-spconv 2.3.8, torchsparse 2.1.0 and WarpConvNet 1.7.11 run on torch 2.5.0+cu124; **MinkowskiEngine 0.5.4 runs on torch 1.10.2+cu113** (its native stack - see the caveat below).
+Measured on one **NVIDIA A100-SXM4-40GB** (SM 8.0), in **bf16 mixed precision** (`torch.autocast`, the modern training default), all four libraries on **torch 2.5.x / CUDA 12.x** (spconv/torchsparse/WarpConvNet: 2.5.0+cu124; MinkowskiEngine: 2.5.1+cu121 via the container).
 Inputs are the 20 PILArNet-M-mini validation events voxelized at voxel size 1 (~600-12000 active voxels each); batches are the first `B` events.
-Every number is the median over 30 timed iterations after 10 warmup iterations.
-Full tables are in [`results/summary.md`](results/summary.md); raw per-configuration data is in [`results/results.csv`](results/results.csv).
+Every number is the median over 30 timed iterations after 20 warmup iterations.
+Full tables are in [`results/summary.md`](results/summary.md); raw per-configuration data is in [`results/results.csv`](results/results.csv). Other precisions are one flag away (`--precision {fp32,tf32,bf16,fp16}`).
 
 ![overview](results/plots/overview.png)
 
-### Headline
+### Headline (bf16)
 
-- **WarpConvNet is the standout at scale** - the fastest on the medium and large models (up to **15x** faster than spconv; 65.7 ms vs 1008 ms at large / bs=16) **and** the most memory-efficient (down to **0.36x** spconv's peak memory). It needs one non-default setting - a deterministic point ordering - to reach this; see below.
-- **torchsparse++ is fastest at small scale** (**2.1-3.1x** spconv) and always strong, but it uses the **most memory** (1.2-2.5x spconv).
-- **MinkowskiEngine** (on its older torch-1.10 / CUDA-11.3 stack) is a strong all-rounder - the lowest memory of all (tied with WarpConvNet) and fast (up to 9x spconv at large scale) - though its different torch/CUDA makes the absolute cross-stack comparison inexact.
-- **spconv** is the most predictable, but the slowest at large batch/model.
+- **WarpConvNet is the standout at scale** - fastest on the medium and large models (**56 ms** vs spconv 132, torchsparse 352 at large / bs=16) **and** the most memory-efficient (down to **0.21x** torchsparse's peak memory). It needs one non-default setting - a deterministic point ordering - to reach this; see below.
+- **MinkowskiEngine** is a strong all-rounder - second-fastest at large scale (105 ms) and low memory - now on the same torch 2.5.1 as the others.
+- **spconv** benefits the most from bf16 (large/bs=16: **1008 ms fp32 -> 132 ms bf16**); together with WarpConvNet it is one of the two libraries that actually leverage `torch.autocast`.
+- **torchsparse++ is fastest at small scale** but **does not respond to `torch.autocast`** - its bf16 numbers equal its fp32 - so under mixed precision it becomes the slowest and most memory-hungry at large scale.
 
-No single library wins everywhere, but at the large scale that matters for real detectors, **WarpConvNet (speed + memory) and MinkowskiEngine (memory)** lead; torchsparse++ leads at small scale.
+### Forward+backward latency (median ms, bf16, lower is better)
 
-### Forward+backward latency (median ms, lower is better)
-
-| network / batch | spconv | torchsparse | warpconvnet | minkowski¹ |
+| network / batch | spconv | torchsparse | warpconvnet | minkowski |
 | --- | ---: | ---: | ---: | ---: |
-| small,  bs=1  | 10.7 | **5.2** | 15.8 | 9.4 |
-| small,  bs=16 | 39.5 | 13.9 | 19.0 | **12.8** |
-| medium, bs=1  | 26.5 | **12.7** | 23.8 | 23.8 |
-| medium, bs=16 | 214.0 | 69.9 | **33.0** | 45.9 |
-| large,  bs=1  | 101.9 | 49.4 | **34.6** | 48.5 |
-| large,  bs=8  | 602.0 | 211.5 | **51.2** | 82.5 |
-| large,  bs=16 | 1007.9 | 352.0 | **65.7** | 110.6 |
+| small,  bs=1  | 12.1 | **4.8** | 15.0 | 9.3 |
+| small,  bs=16 | 15.5 | 13.9 | 18.1 | **13.7** |
+| medium, bs=1  | 18.0 | **12.8** | 23.1 | 23.5 |
+| medium, bs=16 | 40.1 | 70.0 | **29.0** | 44.4 |
+| large,  bs=1  | 23.8 | 49.0 | 33.2 | 46.1 |
+| large,  bs=8  | 77.5 | 211.6 | **45.5** | 79.3 |
+| large,  bs=16 | 131.8 | 352.2 | **56.2** | 105.2 |
 
-### Peak memory, forward+backward (MB allocated, lower is better)
+### Peak memory, forward+backward (MB allocated, bf16, lower is better)
 
-| network / batch | spconv | torchsparse | warpconvnet | minkowski¹ |
+| network / batch | spconv | torchsparse | warpconvnet | minkowski |
 | --- | ---: | ---: | ---: | ---: |
-| small,  bs=16 | 564 | 711 | 219 | **167** |
-| medium, bs=16 | 1540 | 1828 | 561 | **523** |
-| large,  bs=8  | 2430 | 3356 | **1014** | 1037 |
-| large,  bs=16 | 4095 | 5061 | 1558 | **1528** |
+| small,  bs=16 | 351 | 711 | **148** | 185 |
+| medium, bs=16 | 873 | 1828 | **366** | 541 |
+| large,  bs=8  | 1525 | 3356 | **780** | 1055 |
+| large,  bs=16 | 2383 | 5061 | **1062** | 1546 |
 
-¹ MinkowskiEngine on torch 1.10.2+cu113 (different framework stack); the other three on torch 2.5.0+cu124.
+### Precision matters a lot - and unevenly
 
-Per-network bar charts (latency + memory) and log-log scaling curves are in [`results/plots/`](results/plots):
-`bars_{small,medium,large}.png`, `scaling_{small,medium,large}.png`, `speedup_{small,medium,large}.png`.
+Two things surprised us and are worth knowing:
+
+1. **TF32 alone does nothing here.** These libraries run their own CUDA GEMMs, not torch's fp32 matmul, so `torch.set_float32_matmul_precision("high")` has no effect. spconv even has its *own* switch, `spconv.constants.SPCONV_ALLOW_TF32` (the harness sets it) - without it, spconv's fp32 is ~8x slower than it should be.
+2. **Only spconv and WarpConvNet leverage `torch.autocast`.** torchsparse and MinkowskiEngine ignore it (their bf16 results, and memory, are identical to fp32); they would need explicit half-precision input casting to benefit.
+
+Effect of bf16 on the large model at batch 16 (fwd+bwd, ms):
+
+| | spconv | torchsparse | warpconvnet | minkowski |
+| --- | ---: | ---: | ---: | ---: |
+| fp32 | 1008 | 352 | 66 | 111 |
+| **bf16** | **132** (7.6x) | 352 (1.0x) | **56** | 105 |
+
+Per-network bar charts, log-log scaling curves, and speedup-vs-spconv plots are in [`results/plots/`](results/plots).
 
 ![scaling (large model)](results/plots/scaling_large.png)
 

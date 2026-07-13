@@ -44,24 +44,27 @@ SPECS="${SPECS:-small medium large}"
 BATCHES="${BATCHES:-1 2 4 8 16}"
 SPLIT="${SPLIT:-val}"
 VOX="${VOX:-1}"
+PRECISION="${PRECISION:-bf16}"   # fp32 | tf32 | bf16 | fp16
 
 for lib in spconv torchsparse warpconvnet; do
-    echo "======================== $lib ========================"
-    python -m spconv_bench.cli --library "$lib" --split "$SPLIT" --voxel-size "$VOX" \
+    echo "======================== $lib ($PRECISION) ========================"
+    python -m spconv_bench.cli --library "$lib" --precision "$PRECISION" \
+        --split "$SPLIT" --voxel-size "$VOX" \
         --specs $SPECS --batch-sizes $BATCHES --n-warmup 20 --n-iters 30 \
         --out "results/${lib}.json" || echo "!!! $lib FAILED"
 done
 
-# MinkowskiEngine runs in its own torch-1.10 / CUDA-11.3 env (built by
-# scripts/setup_env.sh step 8). Skipped automatically if that env is absent.
-ME_ENV=/sdf/home/y/youngsam/sw/dune/.conda/envs/me-bench
-if [[ -x "$ME_ENV/bin/python" ]]; then
-    echo "======================== minkowski ========================"
-    conda activate "$ME_ENV"
-    OMP_NUM_THREADS=16 python -m spconv_bench.cli --library minkowski --split "$SPLIT" \
-        --voxel-size "$VOX" --specs $SPECS --batch-sizes $BATCHES --n-warmup 20 --n-iters 30 \
-        --out results/minkowski.json || echo "!!! minkowski FAILED"
-    conda activate "$BENCH_ENV"
+# MinkowskiEngine 0.5.4 has no CUDA-12/torch-2.x wheel or clean local build, so
+# it runs inside the DeepLearnPhysics larcv container, which ships ME built
+# against torch 2.5.1+cu121 -- the same modern stack as the other three.
+SPINE_SIF="${SPINE_SIF:-/sdf/group/neutrino/images/develop.sif}"
+if [[ -f "$SPINE_SIF" ]]; then
+    echo "======================== minkowski ($PRECISION, container) ========================"
+    apptainer exec --nv --bind "$PROJ:/work" "$SPINE_SIF" bash -c \
+        "cd /work && export OMP_NUM_THREADS=16 && PYTHONPATH=/work/src python3 -m spconv_bench.cli \
+         --library minkowski --precision $PRECISION --split $SPLIT --voxel-size $VOX \
+         --specs $SPECS --batch-sizes $BATCHES --n-warmup 20 --n-iters 30 \
+         --out /work/results/minkowski.json" || echo "!!! minkowski FAILED"
 fi
 
 echo "======================== aggregate ========================"

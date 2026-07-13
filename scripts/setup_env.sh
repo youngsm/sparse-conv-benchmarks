@@ -71,32 +71,19 @@ PY
 echo ">>> main env DONE"
 
 # ---------------------------------------------------------------------------
-# 8. MinkowskiEngine (separate env). Its last release (0.5.4) predates CUDA 12 /
-#    torch 2.x, so it is built on its native stack -- torch 1.10.2 + CUDA 11.3
-#    (which still runs on the driver here). This is a different torch/CUDA than
-#    the main env; the sparse-conv kernels are MinkowskiEngine's own, and the
-#    difference is noted in the README.
+# 8. MinkowskiEngine. Its last release (0.5.4, 2021) has no CUDA-12 / torch-2.x
+#    wheel and no clean modern source build, so instead of compiling it we run it
+#    from the DeepLearnPhysics larcv container, which ships ME 0.5.4 built against
+#    torch 2.5.1 + CUDA 12.1 -- the same modern stack as the other three
+#    libraries. No build step needed; the benchmark runs inside the container via
+#    `apptainer exec` (see scripts/submit_ampere.sbatch). Just confirm it exists:
 # ---------------------------------------------------------------------------
-ME_ENV=/sdf/home/y/youngsam/sw/dune/.conda/envs/me-bench
-if [[ ! -x "$ME_ENV/bin/python" ]]; then
-    echo ">>> creating MinkowskiEngine env (python 3.9 + CUDA 11.3 + openblas)"
-    "$CONDA" create -y -p "$ME_ENV" -c nvidia/label/cuda-11.3.1 -c conda-forge \
-        python=3.9 cuda-toolkit openblas libopenblas ninja
+SPINE_SIF=/sdf/group/neutrino/images/develop.sif
+if [[ -f "$SPINE_SIF" ]]; then
+    echo ">>> MinkowskiEngine container: $SPINE_SIF"
+    apptainer exec "$SPINE_SIF" python3 -c \
+        "import torch, MinkowskiEngine as ME; print('torch', torch.__version__, 'ME', ME.__version__)"
+else
+    echo ">>> WARNING: ME container $SPINE_SIF not found; MinkowskiEngine will be skipped."
 fi
-conda activate "$ME_ENV"
-export CUDA_HOME="$ME_ENV"
-export CPATH="$ME_ENV/include:${CPATH:-}"
-export LIBRARY_PATH="$ME_ENV/lib:$ME_ENV/lib/stubs:${LIBRARY_PATH:-}"
-export TORCH_CUDA_ARCH_LIST="8.0"
-export MAX_JOBS="${MAX_JOBS:-16}"
-uv pip install --python "$ME_ENV/bin/python" "torch==1.10.2+cu113" \
-    --index-url https://download.pytorch.org/whl/cu113
-uv pip install --python "$ME_ENV/bin/python" "numpy==1.23.5"
-uv pip install --python "$ME_ENV/bin/python" --no-deps -e "$PROJ"
-# MinkowskiEngine (compiled from source with openblas + forced CUDA)
-tmp_me="$(mktemp -d)"; git clone --depth 1 https://github.com/NVIDIA/MinkowskiEngine.git "$tmp_me/ME"
-( cd "$tmp_me/ME" && "$ME_ENV/bin/python" setup.py install --force_cuda --blas=openblas \
-    --cuda_home="$ME_ENV" --blas_include_dirs="$ME_ENV/include" \
-    --blas_library_dirs="$ME_ENV/lib" )
-echo ">>> MinkowskiEngine env DONE"
 echo ">>> DONE"
