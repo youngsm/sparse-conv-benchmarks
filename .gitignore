@@ -1,0 +1,32 @@
+# Environments (built on shared FS, not tracked)
+envs/
+.venv*/
+__pycache__/
+*.pyc
+
+# uv
+.uv/
+uv.lock
+
+# Data: HF download cache + voxelized array cache (regenerated via datasets)
+data/
+*.h5
+*.hdf5
+*.npz
+
+# Slurm / logs
+*.out
+*.err
+slurm-*.out
+logs/
+
+# Scratch
+scratch/
+gpu_probe.txt
+.warpconvnet_cache/
+
+# Local agent tooling / skills
+.claude/
+
+# OS
+.DS_Store

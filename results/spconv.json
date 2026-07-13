@@ -1,0 +1,604 @@
+{
+  "meta": {
+    "library": "spconv",
+    "library_version": "spconv-cu124 2.3.8",
+    "torch_version": "2.5.0+cu124",
+    "cuda_version": "12.4",
+    "device_name": "NVIDIA A100-SXM4-40GB",
+    "device_capability": "8.0",
+    "hostname": "sdfampere020",
+    "timestamp_utc": "2026-07-13T09:09:47.684889+00:00",
+    "split": "val",
+    "voxel_size": 1.0,
+    "in_channels": 1,
+    "n_warmup": 10,
+    "n_iters": 30
+  },
+  "results": [
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 1467216,
+      "forward": {
+        "mean_ms": 8.322082138061523,
+        "std_ms": 0.08451918541242781,
+        "median_ms": 8.301568031311035,
+        "min_ms": 8.238080024719238,
+        "p90_ms": 8.409088134765625,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 14.203255526224773,
+        "std_ms": 1.149573991729344,
+        "median_ms": 13.93510389328003,
+        "min_ms": 13.770751953125,
+        "p90_ms": 14.238719940185547,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 29.672448,
+        "peak_reserved_mb": 56.623104
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 48.197632,
+        "peak_reserved_mb": 60.817408
+      },
+      "throughput_kvox_s": 330.2059863205603,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 1467216,
+      "forward": {
+        "mean_ms": 8.261802673339844,
+        "std_ms": 0.10634592606338795,
+        "median_ms": 8.235520362854004,
+        "min_ms": 8.121343612670898,
+        "p90_ms": 8.39475154876709,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 14.044910907745361,
+        "std_ms": 0.15387884453718523,
+        "median_ms": 13.987328052520752,
+        "min_ms": 13.801471710205078,
+        "p90_ms": 14.295040130615234,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 41.217024,
+        "peak_reserved_mb": 56.623104
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 70.4256,
+        "peak_reserved_mb": 79.691776
+      },
+      "throughput_kvox_s": 519.6900178252333,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 1467216,
+      "forward": {
+        "mean_ms": 9.535180727640787,
+        "std_ms": 0.09010499482405408,
+        "median_ms": 9.50169563293457,
+        "min_ms": 9.41875171661377,
+        "p90_ms": 9.63481616973877,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 20.316979281107585,
+        "std_ms": 0.09990489286514845,
+        "median_ms": 20.279808044433594,
+        "min_ms": 20.196352005004883,
+        "p90_ms": 20.45030403137207,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 102.282752,
+        "peak_reserved_mb": 115.34336
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 214.28736,
+        "peak_reserved_mb": 239.075328
+      },
+      "throughput_kvox_s": 934.3908726457629,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 1467216,
+      "forward": {
+        "mean_ms": 10.652296606699625,
+        "std_ms": 0.09368958726648072,
+        "median_ms": 10.619903564453125,
+        "min_ms": 10.511360168457031,
+        "p90_ms": 10.720255851745605,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 26.235733286539713,
+        "std_ms": 0.11731817044586422,
+        "median_ms": 26.217984199523926,
+        "min_ms": 26.029056549072266,
+        "p90_ms": 26.391551971435547,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 149.218816,
+        "peak_reserved_mb": 184.549376
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 322.63936,
+        "peak_reserved_mb": 358.612992
+      },
+      "throughput_kvox_s": 1158.4200703699282,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "small",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 1467216,
+      "forward": {
+        "mean_ms": 13.427268250783284,
+        "std_ms": 0.6800918955675864,
+        "median_ms": 13.276671886444092,
+        "min_ms": 13.198335647583008,
+        "p90_ms": 13.422592163085938,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 41.2228946685791,
+        "std_ms": 0.12691767718742591,
+        "median_ms": 41.23904037475586,
+        "min_ms": 41.01939010620117,
+        "p90_ms": 41.34502410888672,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 256.22272,
+        "peak_reserved_mb": 333.447168
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 564.088832,
+        "peak_reserved_mb": 627.048448
+      },
+      "throughput_kvox_s": 1375.449260801616,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 10567200,
+      "forward": {
+        "mean_ms": 13.621725845336915,
+        "std_ms": 0.11561254041332762,
+        "median_ms": 13.594624042510986,
+        "min_ms": 13.444095611572266,
+        "p90_ms": 13.812735557556152,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 29.130615234375,
+        "std_ms": 0.17081347017416287,
+        "median_ms": 29.100031852722168,
+        "min_ms": 28.853248596191406,
+        "p90_ms": 29.32428741455078,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 113.884672,
+        "peak_reserved_mb": 142.606336
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 158.180352,
+        "peak_reserved_mb": 186.646528
+      },
+      "throughput_kvox_s": 160.9990026735055,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 10567200,
+      "forward": {
+        "mean_ms": 15.373550828297933,
+        "std_ms": 0.12288849635177801,
+        "median_ms": 15.373824119567871,
+        "min_ms": 15.054847717285156,
+        "p90_ms": 15.47878360748291,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 36.43521715799967,
+        "std_ms": 0.2577248205558332,
+        "median_ms": 36.35968017578125,
+        "min_ms": 35.89324951171875,
+        "p90_ms": 36.699134826660156,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 127.092736,
+        "peak_reserved_mb": 165.675008
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 213.719552,
+        "peak_reserved_mb": 253.755392
+      },
+      "throughput_kvox_s": 200.32815965795444,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 10567200,
+      "forward": {
+        "mean_ms": 27.387289619445802,
+        "std_ms": 0.20061240936582603,
+        "median_ms": 27.35360050201416,
+        "min_ms": 27.1278076171875,
+        "p90_ms": 27.57734489440918,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 88.2567850748698,
+        "std_ms": 0.19948439875433385,
+        "median_ms": 88.26726531982422,
+        "min_ms": 87.93804931640625,
+        "p90_ms": 88.44185638427734,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 225.183744,
+        "peak_reserved_mb": 272.62976
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 608.37376,
+        "peak_reserved_mb": 641.728512
+      },
+      "throughput_kvox_s": 215.09960943960894,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 10567200,
+      "forward": {
+        "mean_ms": 35.97581647237142,
+        "std_ms": 0.09566612014640062,
+        "median_ms": 35.969024658203125,
+        "min_ms": 35.77958297729492,
+        "p90_ms": 36.0898551940918,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 128.69925638834636,
+        "std_ms": 0.22724752733523107,
+        "median_ms": 128.67737579345703,
+        "min_ms": 128.33587646484375,
+        "p90_ms": 129.0557403564453,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 295.604224,
+        "peak_reserved_mb": 413.138944
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 883.982336,
+        "peak_reserved_mb": 947.912704
+      },
+      "throughput_kvox_s": 236.14744057489344,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 10567200,
+      "forward": {
+        "mean_ms": 54.192434819539386,
+        "std_ms": 0.08655309359433397,
+        "median_ms": 54.16192054748535,
+        "min_ms": 54.07948684692383,
+        "p90_ms": 54.326271057128906,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 217.16643981933595,
+        "std_ms": 0.33409176145766767,
+        "median_ms": 217.10540771484375,
+        "min_ms": 216.6128692626953,
+        "p90_ms": 217.60716247558594,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 457.464832,
+        "peak_reserved_mb": 578.813952
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 1539.506176,
+        "peak_reserved_mb": 1625.2928
+      },
+      "throughput_kvox_s": 261.09006551458685,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 61061952,
+      "forward": {
+        "mean_ms": 36.53106320699056,
+        "std_ms": 0.14624551878846626,
+        "median_ms": 36.48614311218262,
+        "min_ms": 36.27827072143555,
+        "p90_ms": 36.748287200927734,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 104.14933293660482,
+        "std_ms": 0.2865066992039569,
+        "median_ms": 104.15718460083008,
+        "min_ms": 103.69843292236328,
+        "p90_ms": 104.37120056152344,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 548.571648,
+        "peak_reserved_mb": 593.494016
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 630.591488,
+        "peak_reserved_mb": 727.711744
+      },
+      "throughput_kvox_s": 45.03149341201042,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 2,
+      "n_voxels": 7299,
+      "n_params": 61061952,
+      "forward": {
+        "mean_ms": 46.29343579610189,
+        "std_ms": 0.17729435456592404,
+        "median_ms": 46.30630302429199,
+        "min_ms": 45.934593200683594,
+        "p90_ms": 46.56230545043945,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 139.66827545166015,
+        "std_ms": 0.32443027948024517,
+        "median_ms": 139.6874237060547,
+        "min_ms": 139.16160583496094,
+        "p90_ms": 140.09957885742188,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 573.581824,
+        "peak_reserved_mb": 650.11712
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 731.460096,
+        "peak_reserved_mb": 876.609536
+      },
+      "throughput_kvox_s": 52.259541233658446,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 4,
+      "n_voxels": 18984,
+      "n_params": 61061952,
+      "forward": {
+        "mean_ms": 118.8185432434082,
+        "std_ms": 0.23332485374568246,
+        "median_ms": 118.80448150634766,
+        "min_ms": 118.34982299804688,
+        "p90_ms": 119.12089538574219,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 411.2265563964844,
+        "std_ms": 0.26916334806503617,
+        "median_ms": 411.2163848876953,
+        "min_ms": 410.6465148925781,
+        "p90_ms": 411.5128173828125,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 730.906624,
+        "peak_reserved_mb": 880.80384
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 1667.575296,
+        "peak_reserved_mb": 1807.745024
+      },
+      "throughput_kvox_s": 46.164333758874655,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 61061952,
+      "forward": {
+        "mean_ms": 167.4179921468099,
+        "std_ms": 0.24639743875772926,
+        "median_ms": 167.404541015625,
+        "min_ms": 166.9785614013672,
+        "p90_ms": 167.7301788330078,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 603.3820332845052,
+        "std_ms": 0.2816811976717586,
+        "median_ms": 603.4083862304688,
+        "min_ms": 602.6864624023438,
+        "p90_ms": 603.7237548828125,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 855.93088,
+        "peak_reserved_mb": 1107.296256
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 2430.333952,
+        "peak_reserved_mb": 2608.857088
+      },
+      "throughput_kvox_s": 50.36941493693705,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "spconv",
+      "library_version": "spconv-cu124 2.3.8",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA A100-SXM4-40GB",
+      "spec_name": "large",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 61061952,
+      "forward": {
+        "mean_ms": 267.33909403483074,
+        "std_ms": 0.3338424720134868,
+        "median_ms": 267.21075439453125,
+        "min_ms": 266.9956970214844,
+        "p90_ms": 267.82208251953125,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 1004.3044189453125,
+        "std_ms": 0.336011308723476,
+        "median_ms": 1004.3008117675781,
+        "min_ms": 1003.6408081054688,
+        "p90_ms": 1004.8092041015625,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 1129.390592,
+        "peak_reserved_mb": 1736.441856
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 4095.2704,
+        "peak_reserved_mb": 4420.796416
+      },
+      "throughput_kvox_s": 56.45698548209563,
+      "ok": true,
+      "error": ""
+    }
+  ]
+}

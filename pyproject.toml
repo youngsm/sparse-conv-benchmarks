@@ -1,0 +1,27 @@
+[project]
+name = "spconv-bench"
+version = "0.1.0"
+description = "Benchmark suite for sparse convolution libraries (spconv, torchsparse++, WarpConvNet) on PILArNet-M"
+requires-python = ">=3.9"
+# NOTE: torch and the sparse-conv libraries themselves are intentionally NOT
+# listed here. They are installed per-library into isolated environments (some
+# need to be compiled against a specific CUDA toolkit). This package is the
+# pure-Python orchestration layer shared by every environment via `-e .`.
+dependencies = [
+    "numpy>=1.23",
+    "h5py>=3.0",
+    "datasets>=2.0",
+    "huggingface_hub>=0.20",
+    "pandas>=2.0",
+    "pyarrow",
+]
+
+[project.scripts]
+spconv-bench = "spconv_bench.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/spconv_bench"]
