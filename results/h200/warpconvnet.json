@@ -1,13 +1,13 @@
 {
   "meta": {
     "library": "warpconvnet",
-    "library_version": "warpconvnet 1.7.11",
+    "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
     "torch_version": "2.5.0+cu124",
     "cuda_version": "12.4",
     "device_name": "NVIDIA H200 NVL",
     "device_capability": "9.0",
     "hostname": "sdfhopper001",
-    "timestamp_utc": "2026-07-13T20:09:45.601415+00:00",
+    "timestamp_utc": "2026-07-14T00:35:58.053479+00:00",
     "split": "val",
     "voxel_size": 1.0,
     "in_channels": 1,
@@ -18,7 +18,7 @@
   "results": [
     {
       "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
       "torch_version": "2.5.0+cu124",
       "cuda_version": "12.4",
       "device_name": "NVIDIA H200 NVL",
@@ -29,36 +29,36 @@
       "n_params": 1467216,
       "precision": "bf16",
       "forward": {
-        "mean_ms": 48.363545735677086,
-        "std_ms": 0.38463743942974793,
-        "median_ms": 48.279184341430664,
-        "min_ms": 48.09795379638672,
-        "p90_ms": 48.564414978027344,
+        "mean_ms": 4.993089071909586,
+        "std_ms": 0.08926532389543429,
+        "median_ms": 4.958544015884399,
+        "min_ms": 4.929279804229736,
+        "p90_ms": 5.1551361083984375,
         "n_iters": 30
       },
       "forward_backward": {
-        "mean_ms": 83.09604949951172,
-        "std_ms": 0.17078165167711926,
-        "median_ms": 83.05467224121094,
-        "min_ms": 82.78892517089844,
-        "p90_ms": 83.2511978149414,
+        "mean_ms": 6.462469355265299,
+        "std_ms": 0.040139729415671524,
+        "median_ms": 6.454528093338013,
+        "min_ms": 6.4067840576171875,
+        "p90_ms": 6.490528106689453,
         "n_iters": 30
       },
       "mem_forward": {
-        "peak_alloc_mb": 83.43296,
-        "peak_reserved_mb": 100.663296
+        "peak_alloc_mb": 85.551616,
+        "peak_reserved_mb": 102.760448
       },
       "mem_forward_backward": {
-        "peak_alloc_mb": 86.984704,
-        "peak_reserved_mb": 104.8576
+        "peak_alloc_mb": 89.680896,
+        "peak_reserved_mb": 106.954752
       },
-      "throughput_kvox_s": 56.44070961553424,
+      "throughput_kvox_s": 725.728779847725,
       "ok": true,
       "error": ""
     },
     {
       "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
       "torch_version": "2.5.0+cu124",
       "cuda_version": "12.4",
       "device_name": "NVIDIA H200 NVL",
@@ -69,36 +69,36 @@
       "n_params": 1467216,
       "precision": "bf16",
       "forward": {
-        "mean_ms": 53.8502389272054,
-        "std_ms": 0.1887508666418444,
-        "median_ms": 53.82246398925781,
-        "min_ms": 53.60124969482422,
-        "p90_ms": 53.9554557800293,
+        "mean_ms": 5.60489494005839,
+        "std_ms": 0.0668068962447568,
+        "median_ms": 5.589439868927002,
+        "min_ms": 5.560256004333496,
+        "p90_ms": 5.623040199279785,
         "n_iters": 30
       },
       "forward_backward": {
-        "mean_ms": 90.4281234741211,
-        "std_ms": 0.44174986611806827,
-        "median_ms": 90.46079635620117,
-        "min_ms": 89.48009490966797,
-        "p90_ms": 90.93965148925781,
+        "mean_ms": 7.569915739695231,
+        "std_ms": 0.05581822081390542,
+        "median_ms": 7.557520151138306,
+        "min_ms": 7.513855934143066,
+        "p90_ms": 7.586207866668701,
         "n_iters": 30
       },
       "mem_forward": {
-        "peak_alloc_mb": 85.267456,
-        "peak_reserved_mb": 100.663296
+        "peak_alloc_mb": 88.466432,
+        "peak_reserved_mb": 106.954752
       },
       "mem_forward_backward": {
-        "peak_alloc_mb": 90.854912,
-        "peak_reserved_mb": 111.149056
+        "peak_alloc_mb": 94.427648,
+        "peak_reserved_mb": 113.246208
       },
-      "throughput_kvox_s": 80.7160396520762,
+      "throughput_kvox_s": 964.2115250669701,
       "ok": true,
       "error": ""
     },
     {
       "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
       "torch_version": "2.5.0+cu124",
       "cuda_version": "12.4",
       "device_name": "NVIDIA H200 NVL",
@@ -109,36 +109,36 @@
       "n_params": 1467216,
       "precision": "bf16",
       "forward": {
-        "mean_ms": 53.518193054199216,
-        "std_ms": 0.09661914949415724,
-        "median_ms": 53.51323318481445,
-        "min_ms": 53.3482551574707,
-        "p90_ms": 53.5731201171875,
+        "mean_ms": 6.030574893951416,
+        "std_ms": 0.07369801545480514,
+        "median_ms": 6.007727861404419,
+        "min_ms": 5.974368095397949,
+        "p90_ms": 6.0589118003845215,
         "n_iters": 30
       },
       "forward_backward": {
-        "mean_ms": 90.46148249308268,
-        "std_ms": 0.3146181943744445,
-        "median_ms": 90.44947052001953,
-        "min_ms": 89.68614196777344,
-        "p90_ms": 90.83888244628906,
+        "mean_ms": 7.9420234362284345,
+        "std_ms": 0.07565176762725355,
+        "median_ms": 7.915632009506226,
+        "min_ms": 7.875936031341553,
+        "p90_ms": 8.026080131530762,
         "n_iters": 30
       },
       "mem_forward": {
-        "peak_alloc_mb": 97.289728,
-        "peak_reserved_mb": 104.8576
+        "peak_alloc_mb": 106.17344,
+        "peak_reserved_mb": 134.217728
       },
       "mem_forward_backward": {
-        "peak_alloc_mb": 115.736064,
-        "peak_reserved_mb": 119.537664
+        "peak_alloc_mb": 124.197888,
+        "peak_reserved_mb": 142.606336
       },
-      "throughput_kvox_s": 209.85727269561,
+      "throughput_kvox_s": 2390.3228380569044,
       "ok": true,
       "error": ""
     },
     {
       "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
       "torch_version": "2.5.0+cu124",
       "cuda_version": "12.4",
       "device_name": "NVIDIA H200 NVL",
@@ -149,36 +149,36 @@
       "n_params": 1467216,
       "precision": "bf16",
       "forward": {
-        "mean_ms": 53.486518732706706,
-        "std_ms": 0.1948171511329655,
-        "median_ms": 53.475969314575195,
-        "min_ms": 53.26559829711914,
-        "p90_ms": 53.55152130126953,
+        "mean_ms": 6.045508257548014,
+        "std_ms": 0.08556252459082112,
+        "median_ms": 6.0279200077056885,
+        "min_ms": 5.964928150177002,
+        "p90_ms": 6.06822395324707,
         "n_iters": 30
       },
       "forward_backward": {
-        "mean_ms": 90.05564371744792,
-        "std_ms": 0.2559558990301179,
-        "median_ms": 90.07699203491211,
-        "min_ms": 89.4862060546875,
-        "p90_ms": 90.37257385253906,
+        "mean_ms": 8.155433654785156,
+        "std_ms": 0.07350025378640979,
+        "median_ms": 8.13592004776001,
+        "min_ms": 8.101823806762695,
+        "p90_ms": 8.16534423828125,
         "n_iters": 30
       },
       "mem_forward": {
-        "peak_alloc_mb": 106.21184,
-        "peak_reserved_mb": 146.80064
+        "peak_alloc_mb": 125.124096,
+        "peak_reserved_mb": 150.994944
       },
       "mem_forward_backward": {
-        "peak_alloc_mb": 136.383488,
-        "peak_reserved_mb": 155.189248
+        "peak_alloc_mb": 151.794688,
+        "peak_reserved_mb": 174.063616
       },
-      "throughput_kvox_s": 337.4802371670979,
+      "throughput_kvox_s": 3726.59521080987,
       "ok": true,
       "error": ""
     },
     {
       "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
       "torch_version": "2.5.0+cu124",
       "cuda_version": "12.4",
       "device_name": "NVIDIA H200 NVL",
@@ -189,76 +189,76 @@
       "n_params": 1467216,
       "precision": "bf16",
       "forward": {
-        "mean_ms": 53.09709358215332,
-        "std_ms": 0.1178833416753661,
-        "median_ms": 53.08839988708496,
-        "min_ms": 52.927391052246094,
-        "p90_ms": 53.28160095214844,
+        "mean_ms": 6.204508813222249,
+        "std_ms": 0.01572847807966089,
+        "median_ms": 6.203520059585571,
+        "min_ms": 6.176383972167969,
+        "p90_ms": 6.227903842926025,
         "n_iters": 30
       },
       "forward_backward": {
-        "mean_ms": 89.80704243977864,
-        "std_ms": 0.26646989222707324,
-        "median_ms": 89.84657669067383,
-        "min_ms": 89.20848083496094,
-        "p90_ms": 90.0565414428711,
+        "mean_ms": 8.82020378112793,
+        "std_ms": 0.051805847812904815,
+        "median_ms": 8.806640148162842,
+        "min_ms": 8.781824111938477,
+        "p90_ms": 8.830528259277344,
         "n_iters": 30
       },
       "mem_forward": {
-        "peak_alloc_mb": 127.232512,
-        "peak_reserved_mb": 169.869312
+        "peak_alloc_mb": 156.261376,
+        "peak_reserved_mb": 222.298112
       },
       "mem_forward_backward": {
-        "peak_alloc_mb": 182.12352,
+        "peak_alloc_mb": 205.697024,
+        "peak_reserved_mb": 220.20096
+      },
+      "throughput_kvox_s": 6428.422903484117,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 1,
+      "n_voxels": 4690,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 7.242202663421631,
+        "std_ms": 0.06427118705143671,
+        "median_ms": 7.224992036819458,
+        "min_ms": 7.192800045013428,
+        "p90_ms": 7.260128021240234,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 10.531134923299154,
+        "std_ms": 0.10998494101057832,
+        "median_ms": 10.49342393875122,
+        "min_ms": 10.443807601928711,
+        "p90_ms": 10.6910400390625,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 162.144256,
         "peak_reserved_mb": 192.937984
       },
-      "throughput_kvox_s": 631.3536050140051,
-      "ok": true,
-      "error": ""
-    },
-    {
-      "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
-      "torch_version": "2.5.0+cu124",
-      "cuda_version": "12.4",
-      "device_name": "NVIDIA H200 NVL",
-      "spec_name": "medium",
-      "in_channels": 1,
-      "batch_size": 1,
-      "n_voxels": 4690,
-      "n_params": 10567200,
-      "precision": "bf16",
-      "forward": {
-        "mean_ms": 57.545685068766275,
-        "std_ms": 0.10143088314168149,
-        "median_ms": 57.55204772949219,
-        "min_ms": 57.37740707397461,
-        "p90_ms": 57.647422790527344,
-        "n_iters": 30
-      },
-      "forward_backward": {
-        "mean_ms": 116.83765258789063,
-        "std_ms": 0.32248597656187705,
-        "median_ms": 116.964111328125,
-        "min_ms": 116.16604614257812,
-        "p90_ms": 117.1993637084961,
-        "n_iters": 30
-      },
-      "mem_forward": {
-        "peak_alloc_mb": 160.260608,
-        "peak_reserved_mb": 186.646528
-      },
       "mem_forward_backward": {
-        "peak_alloc_mb": 168.627712,
-        "peak_reserved_mb": 203.423744
+        "peak_alloc_mb": 176.973312,
+        "peak_reserved_mb": 205.520896
       },
-      "throughput_kvox_s": 40.14116935867029,
+      "throughput_kvox_s": 445.34611266102127,
       "ok": true,
       "error": ""
     },
     {
       "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
       "torch_version": "2.5.0+cu124",
       "cuda_version": "12.4",
       "device_name": "NVIDIA H200 NVL",
@@ -269,36 +269,36 @@
       "n_params": 10567200,
       "precision": "bf16",
       "forward": {
-        "mean_ms": 65.57634353637695,
-        "std_ms": 0.17059621872895334,
-        "median_ms": 65.56473541259766,
-        "min_ms": 65.24575805664062,
-        "p90_ms": 65.77555084228516,
+        "mean_ms": 8.219006983439128,
+        "std_ms": 0.050568739409084774,
+        "median_ms": 8.213456153869629,
+        "min_ms": 8.148608207702637,
+        "p90_ms": 8.23904037475586,
         "n_iters": 30
       },
       "forward_backward": {
-        "mean_ms": 125.96997833251953,
-        "std_ms": 0.4315182482886047,
-        "median_ms": 125.95539093017578,
-        "min_ms": 125.28761291503906,
-        "p90_ms": 126.57667541503906,
+        "mean_ms": 12.008792495727539,
+        "std_ms": 0.11449068666365823,
+        "median_ms": 11.965951919555664,
+        "min_ms": 11.90454387664795,
+        "p90_ms": 12.236160278320312,
         "n_iters": 30
       },
       "mem_forward": {
-        "peak_alloc_mb": 162.732032,
-        "peak_reserved_mb": 190.840832
+        "peak_alloc_mb": 165.484032,
+        "peak_reserved_mb": 199.22944
       },
       "mem_forward_backward": {
-        "peak_alloc_mb": 177.35168,
-        "peak_reserved_mb": 216.006656
+        "peak_alloc_mb": 186.158592,
+        "peak_reserved_mb": 218.103808
       },
-      "throughput_kvox_s": 57.942377196676404,
+      "throughput_kvox_s": 607.804656679414,
       "ok": true,
       "error": ""
     },
     {
       "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
       "torch_version": "2.5.0+cu124",
       "cuda_version": "12.4",
       "device_name": "NVIDIA H200 NVL",
@@ -309,116 +309,116 @@
       "n_params": 10567200,
       "precision": "bf16",
       "forward": {
-        "mean_ms": 65.28723017374675,
-        "std_ms": 0.3461195964527709,
-        "median_ms": 65.20956802368164,
-        "min_ms": 64.97026824951172,
-        "p90_ms": 65.4236831665039,
+        "mean_ms": 8.715521017710367,
+        "std_ms": 0.02189529785766052,
+        "median_ms": 8.71067190170288,
+        "min_ms": 8.679807662963867,
+        "p90_ms": 8.742176055908203,
         "n_iters": 30
       },
       "forward_backward": {
-        "mean_ms": 125.52749354044596,
-        "std_ms": 0.5131089950356525,
-        "median_ms": 125.42057800292969,
-        "min_ms": 124.76815795898438,
-        "p90_ms": 126.19039916992188,
+        "mean_ms": 13.927793057759603,
+        "std_ms": 0.12642373597932768,
+        "median_ms": 13.90724802017212,
+        "min_ms": 13.840928077697754,
+        "p90_ms": 13.929439544677734,
         "n_iters": 30
       },
       "mem_forward": {
-        "peak_alloc_mb": 180.255744,
-        "peak_reserved_mb": 230.68672
+        "peak_alloc_mb": 190.450688,
+        "peak_reserved_mb": 232.783872
       },
       "mem_forward_backward": {
-        "peak_alloc_mb": 236.163072,
-        "peak_reserved_mb": 255.852544
-      },
-      "throughput_kvox_s": 151.23380117426788,
-      "ok": true,
-      "error": ""
-    },
-    {
-      "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
-      "torch_version": "2.5.0+cu124",
-      "cuda_version": "12.4",
-      "device_name": "NVIDIA H200 NVL",
-      "spec_name": "medium",
-      "in_channels": 1,
-      "batch_size": 8,
-      "n_voxels": 30392,
-      "n_params": 10567200,
-      "precision": "bf16",
-      "forward": {
-        "mean_ms": 64.93379770914713,
-        "std_ms": 0.11892622321742942,
-        "median_ms": 64.94976043701172,
-        "min_ms": 64.72691345214844,
-        "p90_ms": 65.10582733154297,
-        "n_iters": 30
-      },
-      "forward_backward": {
-        "mean_ms": 125.5308235168457,
-        "std_ms": 0.3382001670321364,
-        "median_ms": 125.57177734375,
-        "min_ms": 124.94786834716797,
-        "p90_ms": 125.97491455078125,
-        "n_iters": 30
-      },
-      "mem_forward": {
-        "peak_alloc_mb": 194.939392,
-        "peak_reserved_mb": 253.755392
-      },
-      "mem_forward_backward": {
-        "peak_alloc_mb": 285.569024,
-        "peak_reserved_mb": 320.864256
-      },
-      "throughput_kvox_s": 242.1078676021075,
-      "ok": true,
-      "error": ""
-    },
-    {
-      "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
-      "torch_version": "2.5.0+cu124",
-      "cuda_version": "12.4",
-      "device_name": "NVIDIA H200 NVL",
-      "spec_name": "medium",
-      "in_channels": 1,
-      "batch_size": 16,
-      "n_voxels": 56700,
-      "n_params": 10567200,
-      "precision": "bf16",
-      "forward": {
-        "mean_ms": 65.77510096232096,
-        "std_ms": 0.07488481148467449,
-        "median_ms": 65.77334594726562,
-        "min_ms": 65.61593627929688,
-        "p90_ms": 65.85823822021484,
-        "n_iters": 30
-      },
-      "forward_backward": {
-        "mean_ms": 128.2422637939453,
-        "std_ms": 0.14711616115916604,
-        "median_ms": 128.2548599243164,
-        "min_ms": 127.87564849853516,
-        "p90_ms": 128.41448974609375,
-        "n_iters": 30
-      },
-      "mem_forward": {
-        "peak_alloc_mb": 224.107008,
+        "peak_alloc_mb": 245.980672,
         "peak_reserved_mb": 276.824064
       },
-      "mem_forward_backward": {
-        "peak_alloc_mb": 396.609024,
-        "peak_reserved_mb": 425.721856
-      },
-      "throughput_kvox_s": 442.1319331285617,
+      "throughput_kvox_s": 1363.0300164047476,
       "ok": true,
       "error": ""
     },
     {
       "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 8,
+      "n_voxels": 30392,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 9.131748294830322,
+        "std_ms": 0.10103529177409479,
+        "median_ms": 9.102560043334961,
+        "min_ms": 9.041760444641113,
+        "p90_ms": 9.337759971618652,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 15.482017103830973,
+        "std_ms": 0.09281259807001162,
+        "median_ms": 15.470304012298584,
+        "min_ms": 15.348608016967773,
+        "p90_ms": 15.570112228393555,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 208.256,
+        "peak_reserved_mb": 274.726912
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 302.175232,
+        "peak_reserved_mb": 339.738624
+      },
+      "throughput_kvox_s": 1963.0517003162076,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
+      "torch_version": "2.5.0+cu124",
+      "cuda_version": "12.4",
+      "device_name": "NVIDIA H200 NVL",
+      "spec_name": "medium",
+      "in_channels": 1,
+      "batch_size": 16,
+      "n_voxels": 56700,
+      "n_params": 10567200,
+      "precision": "bf16",
+      "forward": {
+        "mean_ms": 9.207521152496337,
+        "std_ms": 0.0413926518301716,
+        "median_ms": 9.212607860565186,
+        "min_ms": 9.13584041595459,
+        "p90_ms": 9.256704330444336,
+        "n_iters": 30
+      },
+      "forward_backward": {
+        "mean_ms": 16.17046413421631,
+        "std_ms": 0.08408569683635436,
+        "median_ms": 16.170416831970215,
+        "min_ms": 16.00966453552246,
+        "p90_ms": 16.257919311523438,
+        "n_iters": 30
+      },
+      "mem_forward": {
+        "peak_alloc_mb": 252.407808,
+        "peak_reserved_mb": 455.081984
+      },
+      "mem_forward_backward": {
+        "peak_alloc_mb": 409.800704,
+        "peak_reserved_mb": 452.984832
+      },
+      "throughput_kvox_s": 3506.392861044982,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "library": "warpconvnet",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
       "torch_version": "2.5.0+cu124",
       "cuda_version": "12.4",
       "device_name": "NVIDIA H200 NVL",
@@ -429,36 +429,36 @@
       "n_params": 61061952,
       "precision": "bf16",
       "forward": {
-        "mean_ms": 65.95590387980143,
-        "std_ms": 0.1206043433138705,
-        "median_ms": 65.9544792175293,
-        "min_ms": 65.64051055908203,
-        "p90_ms": 66.0914535522461,
+        "mean_ms": 9.681037902832031,
+        "std_ms": 0.01843604051829824,
+        "median_ms": 9.686352252960205,
+        "min_ms": 9.648032188415527,
+        "p90_ms": 9.699328422546387,
         "n_iters": 30
       },
       "forward_backward": {
-        "mean_ms": 146.79195200602214,
-        "std_ms": 0.27821083276043684,
-        "median_ms": 146.86074829101562,
-        "min_ms": 146.32003784179688,
-        "p90_ms": 147.19561767578125,
+        "mean_ms": 16.291442171732584,
+        "std_ms": 0.09389963983062266,
+        "median_ms": 16.244688034057617,
+        "min_ms": 16.20128059387207,
+        "p90_ms": 16.456768035888672,
         "n_iters": 30
       },
       "mem_forward": {
-        "peak_alloc_mb": 593.307648,
-        "peak_reserved_mb": 622.854144
+        "peak_alloc_mb": 589.884928,
+        "peak_reserved_mb": 950.009856
       },
       "mem_forward_backward": {
-        "peak_alloc_mb": 601.048576,
-        "peak_reserved_mb": 660.60288
+        "peak_alloc_mb": 599.754752,
+        "peak_reserved_mb": 996.1472
       },
-      "throughput_kvox_s": 31.949980471733173,
+      "throughput_kvox_s": 287.88120477987263,
       "ok": true,
       "error": ""
     },
     {
       "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
       "torch_version": "2.5.0+cu124",
       "cuda_version": "12.4",
       "device_name": "NVIDIA H200 NVL",
@@ -469,36 +469,36 @@
       "n_params": 61061952,
       "precision": "bf16",
       "forward": {
-        "mean_ms": 76.87262420654297,
-        "std_ms": 0.09724064706764507,
-        "median_ms": 76.87141036987305,
-        "min_ms": 76.64320373535156,
-        "p90_ms": 76.97014617919922,
+        "mean_ms": 11.058915106455485,
+        "std_ms": 0.024612910500960112,
+        "median_ms": 11.05673599243164,
+        "min_ms": 11.006591796875,
+        "p90_ms": 11.088479995727539,
         "n_iters": 30
       },
       "forward_backward": {
-        "mean_ms": 160.26152598063152,
-        "std_ms": 0.429361876692156,
-        "median_ms": 160.33513641357422,
-        "min_ms": 159.33795166015625,
-        "p90_ms": 160.7972412109375,
+        "mean_ms": 18.704513041178384,
+        "std_ms": 0.1148503066546145,
+        "median_ms": 18.712400436401367,
+        "min_ms": 18.509504318237305,
+        "p90_ms": 18.84307289123535,
         "n_iters": 30
       },
       "mem_forward": {
-        "peak_alloc_mb": 598.03648,
-        "peak_reserved_mb": 633.339904
+        "peak_alloc_mb": 599.673344,
+        "peak_reserved_mb": 624.951296
       },
       "mem_forward_backward": {
-        "peak_alloc_mb": 624.191488,
-        "peak_reserved_mb": 694.157312
+        "peak_alloc_mb": 618.15808,
+        "peak_reserved_mb": 679.477248
       },
-      "throughput_kvox_s": 45.54430612923357,
+      "throughput_kvox_s": 390.2266786593747,
       "ok": true,
       "error": ""
     },
     {
       "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
       "torch_version": "2.5.0+cu124",
       "cuda_version": "12.4",
       "device_name": "NVIDIA H200 NVL",
@@ -509,36 +509,36 @@
       "n_params": 61061952,
       "precision": "bf16",
       "forward": {
-        "mean_ms": 77.62323201497396,
-        "std_ms": 0.06252416671657002,
-        "median_ms": 77.61865615844727,
-        "min_ms": 77.49549102783203,
-        "p90_ms": 77.69942474365234,
+        "mean_ms": 12.495430405934652,
+        "std_ms": 0.017974986290946172,
+        "median_ms": 12.498400211334229,
+        "min_ms": 12.447104454040527,
+        "p90_ms": 12.51587200164795,
         "n_iters": 30
       },
       "forward_backward": {
-        "mean_ms": 163.43187510172527,
-        "std_ms": 0.36110671580939935,
-        "median_ms": 163.40148162841797,
-        "min_ms": 163.01962280273438,
-        "p90_ms": 163.60643005371094,
+        "mean_ms": 24.631144587198893,
+        "std_ms": 0.03169842749763632,
+        "median_ms": 24.629535675048828,
+        "min_ms": 24.5731201171875,
+        "p90_ms": 24.679168701171875,
         "n_iters": 30
       },
       "mem_forward": {
-        "peak_alloc_mb": 622.260736,
-        "peak_reserved_mb": 664.797184
+        "peak_alloc_mb": 629.563904,
+        "peak_reserved_mb": 685.768704
       },
       "mem_forward_backward": {
-        "peak_alloc_mb": 741.765632,
-        "peak_reserved_mb": 805.306368
+        "peak_alloc_mb": 726.032384,
+        "peak_reserved_mb": 813.694976
       },
-      "throughput_kvox_s": 116.15849104211615,
+      "throughput_kvox_s": 770.7315400140282,
       "ok": true,
       "error": ""
     },
     {
       "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
       "torch_version": "2.5.0+cu124",
       "cuda_version": "12.4",
       "device_name": "NVIDIA H200 NVL",
@@ -549,36 +549,36 @@
       "n_params": 61061952,
       "precision": "bf16",
       "forward": {
-        "mean_ms": 78.32568079630533,
-        "std_ms": 0.0685093162689056,
-        "median_ms": 78.31531143188477,
-        "min_ms": 78.20569610595703,
-        "p90_ms": 78.4012451171875,
+        "mean_ms": 12.573917897542318,
+        "std_ms": 0.023800770310658238,
+        "median_ms": 12.568095684051514,
+        "min_ms": 12.526304244995117,
+        "p90_ms": 12.598848342895508,
         "n_iters": 30
       },
       "forward_backward": {
-        "mean_ms": 170.3647939046224,
-        "std_ms": 0.18105288110517986,
-        "median_ms": 170.32097625732422,
-        "min_ms": 170.18234252929688,
-        "p90_ms": 170.46041870117188,
+        "mean_ms": 25.751164881388345,
+        "std_ms": 0.035176367261859486,
+        "median_ms": 25.751215934753418,
+        "min_ms": 25.677663803100586,
+        "p90_ms": 25.790687561035156,
         "n_iters": 30
       },
       "mem_forward": {
-        "peak_alloc_mb": 645.200896,
-        "peak_reserved_mb": 731.906048
+        "peak_alloc_mb": 653.312,
+        "peak_reserved_mb": 700.448768
       },
       "mem_forward_backward": {
-        "peak_alloc_mb": 842.184704,
-        "peak_reserved_mb": 1033.895936
+        "peak_alloc_mb": 830.39744,
+        "peak_reserved_mb": 1004.535808
       },
-      "throughput_kvox_s": 178.3936651666116,
+      "throughput_kvox_s": 1180.2184538053973,
       "ok": true,
       "error": ""
     },
     {
       "library": "warpconvnet",
-      "library_version": "warpconvnet 1.7.11",
+      "library_version": "warpconvnet 1.7.12.dev2+ga79883876.d20260714",
       "torch_version": "2.5.0+cu124",
       "cuda_version": "12.4",
       "device_name": "NVIDIA H200 NVL",
@@ -589,30 +589,30 @@
       "n_params": 61061952,
       "precision": "bf16",
       "forward": {
-        "mean_ms": 81.0202402750651,
-        "std_ms": 0.08785827533519107,
-        "median_ms": 81.01286315917969,
-        "min_ms": 80.83360290527344,
-        "p90_ms": 81.11331176757812,
+        "mean_ms": 15.687431526184081,
+        "std_ms": 0.025949410644886463,
+        "median_ms": 15.686783790588379,
+        "min_ms": 15.63644790649414,
+        "p90_ms": 15.720640182495117,
         "n_iters": 30
       },
       "forward_backward": {
-        "mean_ms": 186.05496978759766,
-        "std_ms": 0.731463986991009,
-        "median_ms": 185.90528106689453,
-        "min_ms": 185.8228759765625,
-        "p90_ms": 186.04617309570312,
+        "mean_ms": 34.941522216796876,
+        "std_ms": 0.03462931465449389,
+        "median_ms": 34.93614387512207,
+        "min_ms": 34.88908767700195,
+        "p90_ms": 34.980960845947266,
         "n_iters": 30
       },
       "mem_forward": {
-        "peak_alloc_mb": 686.142976,
-        "peak_reserved_mb": 754.97472
+        "peak_alloc_mb": 703.243776,
+        "peak_reserved_mb": 1096.810496
       },
       "mem_forward_backward": {
-        "peak_alloc_mb": 1116.493824,
-        "peak_reserved_mb": 1377.828864
+        "peak_alloc_mb": 1104.92416,
+        "peak_reserved_mb": 1197.473792
       },
-      "throughput_kvox_s": 304.7486453316959,
+      "throughput_kvox_s": 1622.7112158480468,
       "ok": true,
       "error": ""
     }

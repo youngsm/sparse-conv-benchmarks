@@ -147,6 +147,52 @@ def make_plots(df: pd.DataFrame, outdir: Path) -> List[Path]:
         plt.close(fig)
         written.append(out)
 
+    # ---- 3b. speed vs memory Pareto (the library-selection view) -------------
+    #      x = latency, y = memory; bottom-left is best. One panel per model, at
+    #      the largest batch, on the primary GPU (A100).
+    pgpu = "A100" if "A100" in gpus else gpus[0]
+    bs = 16 if 16 in set(df.batch_size) else sorted(df.batch_size)[-1]
+    fig, axes = plt.subplots(1, len(specs), figsize=(5.2 * len(specs), 4.8),
+                             squeeze=False)
+    for c, spec in enumerate(specs):
+        ax = axes[0][c]
+        sub = df[(df.gpu == pgpu) & (df.spec == spec) & (df.batch_size == bs)]
+        pts = []
+        for lib in libs:
+            r = sub[sub.library == lib]
+            if r.empty:
+                continue
+            xlat, ymem = r["fwdbwd_ms"].mean(), r["mem_fwdbwd_mb"].mean()
+            pts.append((xlat, ymem, lib))
+            ax.scatter([xlat], [ymem], s=140, color=color(lib), zorder=3,
+                       edgecolor="white", linewidth=1.2)
+            ax.annotate(lib, (xlat, ymem), textcoords="offset points",
+                        xytext=(8, 5), fontsize=9, color=color(lib), weight="bold")
+        # Pareto frontier (minimise both): sort by latency, keep running-min memory
+        front = []
+        best_mem = np.inf
+        for xlat, ymem, lib in sorted(pts):
+            if ymem <= best_mem:
+                front.append((xlat, ymem))
+                best_mem = ymem
+        if len(front) >= 2:
+            fx, fy = zip(*front)
+            ax.plot(fx, fy, "k--", lw=1, alpha=0.5, zorder=2, label="Pareto frontier")
+        ax.set_xscale("log")
+        ax.set_yscale("log")
+        ax.set_xlabel("Fwd+bwd latency (ms)  ->  slower")
+        if c == 0:
+            ax.set_ylabel("Peak memory (MB)  ->  more")
+        ax.set_title(f"{spec}  ({_params_by_spec(df)[spec]:.1f}M params)")
+        ax.grid(True, which="both", alpha=0.3)
+        ax.margins(0.18)
+    fig.suptitle(f"Speed vs memory trade-off ({pgpu}, batch {bs}, bf16) - bottom-left is best")
+    fig.tight_layout()
+    out = outdir / "pareto_speed_memory.png"
+    fig.savefig(out, dpi=140)
+    plt.close(fig)
+    written.append(out)
+
     # ---- 4. comprehensive scaling grid: metric x model, A100 solid/H200 dashed
     metrics = [("fwdbwd_ms", "Fwd+bwd latency (ms)"),
                ("mem_fwdbwd_mb", "Peak memory fwd+bwd (MB)")]

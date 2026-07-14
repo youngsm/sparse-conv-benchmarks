@@ -95,10 +95,12 @@ echo ">>> DONE"
 #      FORCE_CUDA=1 uv pip install --python "$PY" --no-build-isolation --no-cache \
 #        "git+https://github.com/mit-han-lab/torchsparse.git@${TS_COMMIT}"
 #    WarpConvNet's Hopper (CuTe/CUTLASS) kernels need CUDA 12.8 to compile (12.4's
-#    ptxas rejects them). Build with CUDA_HOME pointed at a 12.8 toolkit:
+#    ptxas rejects them), AND release 1.7.11's auto-tuned Hopper kernels are
+#    numerically broken (NaN) because of a cp.async race. Use the fix branch,
+#    which corrects the race so the fast `cute_grouped_sm90` kernels auto-select
+#    and are correct on H200. Build it for both arches with a 12.8 toolkit:
 #      conda create -y -p envs/cudatk128 -c nvidia/label/cuda-12.8.0 cuda-toolkit
-#      CUDA_HOME=envs/cudatk128 TORCH_CUDA_ARCH_LIST="8.0 9.0" \
-#        uv pip install --python "$PY" --no-build-isolation --no-cache --reinstall warpconvnet==1.7.11
-#    spconv's wheel and the container's MinkowskiEngine already ship sm_90.
-#    NOTE: WarpConvNet 1.7.11's auto-tuned Hopper kernels are numerically broken
-#    (NaN); run it on H200 with WARPCONVNET_{FWD,DGRAD,WGRAD}_ALGO_MODE=explicit_gemm.
+#      bash scripts/build_wcn_fix.sh          # clones the branch, builds sm_80+sm_90
+#    (see scripts/build_wcn_fix.sh for the exact env). spconv's wheel and the
+#    container's MinkowskiEngine already ship sm_90. With the fix branch, run
+#    WarpConvNet on H200 with the default AUTO algorithm (no ALGO_MODE override).
